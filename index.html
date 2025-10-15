@@ -5,56 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SmartRehab — XAI Data Science Lab</title>
   <meta name="description" content="SmartRehab: Explainable AI in rehabilitation — XAI Data Science Lab">
+  <!-- Roboto font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     /* ====== Design tokens ====== */
     :root{
-      --bg: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --accent: #0ea5e9;
-      --accent-2: #6366f1;
+      --bg: #ffffff;          /* white background */
+      --text: #1f2937;        /* gray-800 */
+      --muted: #6b7280;       /* gray-500 */
       --ring: rgba(14,165,233,.25);
-      --card: rgba(255,255,255,.78);
+      --card: #ffffff;
       --border: rgba(0,0,0,.08);
-      --shadow: 0 10px 30px rgba(2,6,23,.08), 0 2px 8px rgba(2,6,23,.04);
+      --shadow: 0 10px 30px rgba(2,6,23,.06), 0 2px 8px rgba(2,6,23,.04);
       --serif: Georgia, "Times New Roman", Times, "Noto Serif", serif;
-      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-    }
+      --sans: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 
-    @media (prefers-color-scheme: dark){
-      :root{
-        --bg: #0b1020;
-        --text: #e5e7eb;
-        --muted: #9aa3b2;
-        --card: rgba(18, 24, 48, .55);
-        --border: rgba(255,255,255,.08);
-        --shadow: 0 10px 30px rgba(0,0,0,.35), 0 2px 8px rgba(0,0,0,.25);
-      }
+      /* Brand-ish accents */
+      --spz: #f16b5f;         /* Swiss Paraplegic Centre coral */
+      --hslu: #009fe3;        /* HSLU blue */
+      --accent-2: #0b57d0;    /* secondary blue for gradients/focus */
+      --snsf-red: #e41e26;    /* SNSF */
     }
 
     /* ====== Global ====== */
     html, body {
       height: 100%;
-      background: radial-gradient(1200px 600px at 10% -10%, rgba(14,165,233,.14), transparent 60%),
-                  radial-gradient(1200px 600px at 90% 110%, rgba(99,102,241,.12), transparent 60%),
-                  var(--bg);
+      background: var(--bg);
       color: var(--text);
       font-family: var(--sans);
       line-height: 1.6;
       margin: 0;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-
-    .wrapper {
+    .wrapper{
       min-height: 100%;
       display: grid;
       grid-template-rows: auto 1fr auto;
+      background:
+        radial-gradient(900px 400px at 12% -10%, rgba(0,159,227,.06), transparent 55%),
+        radial-gradient(900px 400px at 90% 110%, rgba(241,107,95,.07), transparent 55%);
     }
 
     /* ====== Header ====== */
-    header {
-      padding: 1.25rem 1rem;
+    header{
+      padding: 1.1rem 1rem;
       max-width: 1100px;
       margin: 0 auto;
       display: flex;
@@ -62,182 +59,191 @@
       justify-content: space-between;
       gap: 1rem;
     }
-
-    .brand {
+    .brand{
       display: flex;
       align-items: center;
       gap: .75rem;
       text-decoration: none;
       color: inherit;
-      font-weight: 600;
+      font-weight: 700;
+      letter-spacing: .2px;
     }
-
-    .logo {
+    .logo{
       width: 36px; height: 36px; border-radius: 8px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      display: grid; place-items: center;
-      color: white; font-weight: 800; font-family: var(--serif);
+      background: linear-gradient(135deg, var(--hslu), var(--spz));
       box-shadow: 0 6px 16px var(--ring);
+      display: grid; place-items: center;
+      color: white; font-weight: 800;
+      font-family: var(--serif);
     }
-
-    .brand small {
+    .brand small{
       color: var(--muted);
       font-weight: 500;
     }
+    nav a{
+      color: inherit;
+      text-decoration: none;
+      margin-left: 1rem;
+      border-bottom: 1px solid transparent;
+    }
+    nav a:hover{ border-color: var(--border); }
 
-    /* ====== Hero section ====== */
-    .hero {
+    /* ====== Hero / Intro ====== */
+    .hero{
       display: grid;
       place-items: center;
-      padding: 4.5rem 1rem 2.5rem;
+      padding: 3.5rem 1rem 2rem;
     }
-
-    .card {
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
+    .card{
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 16px;
       box-shadow: var(--shadow);
       max-width: 980px;
-      padding: 3rem clamp(1rem, 3vw, 3rem);
+      padding: 2.5rem clamp(1rem, 3vw, 3rem);
       text-align: center;
     }
-
-    h1 {
-      margin: 0 0 1.2rem;
-      font-size: clamp(2.2rem, 4vw + .5rem, 3.8rem);
-      font-family: var(--serif);
+    h1{
+      margin: 0 0 1rem;
+      font-size: clamp(2.2rem, 4vw + .5rem, 3.6rem);
       line-height: 1.15;
+      font-family: var(--serif);
+      letter-spacing: 0.2px;
+      text-wrap: balance;
     }
-
-    .lead {
-      font-size: clamp(1.05rem, 1.2vw + .8rem, 1.35rem);
-      max-width: 75ch;
+    .lead{
+      font-size: clamp(1.05rem, 1.2vw + .8rem, 1.25rem);
       margin: 0 auto;
+      max-width: 75ch;
+      text-wrap: pretty;
     }
-
-    .lead b {
-      font-weight: 700;
-    }
-
-    .meta {
-      margin-top: 1.25rem;
+    .lead b{ font-weight: 700; }
+    .meta{
+      margin-top: 1rem;
       color: var(--muted);
       font-size: .98rem;
     }
 
-    /* ====== Partner Section ====== */
-    .partners {
-      margin: 2.25rem auto 0;
-      text-align: center;
-    }
-
-    .partners .label {
-      color: var(--muted);
-      font-size: .9rem;
-      text-transform: uppercase;
-      letter-spacing: .2px;
-      margin-bottom: .75rem;
-    }
-
-    .logo-row {
-      display: flex;
-      justify-content: center;
+    /* ====== Partner bar ====== */
+    .partners{
+      margin: 2rem auto 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: .75rem;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 1.75rem;
+      justify-items: center;
     }
-
-    .partner {
-      display: flex;
+    .partners .label{
+      color: var(--muted);
+      font-size: .85rem;
+      letter-spacing: .3px;
+      text-transform: uppercase;
+    }
+    .logo-row{
+      display: grid;
+      grid-auto-flow: column;
+      gap: 1.5rem;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .partner{
+      display: inline-flex;
       align-items: center;
       gap: .6rem;
-      padding: .5rem .8rem;
+      padding: .5rem .75rem;
       border-radius: 10px;
-      background: rgba(255,255,255,.55);
+      background: #f9fafb;
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
     }
-
-    .partner img {
+    .partner img{
       height: 40px;
       width: auto;
       display: block;
     }
-
-    .partner span {
+    .partner span{
       font-weight: 700;
       color: var(--text);
+      letter-spacing: .2px;
     }
 
     /* ====== SNSF acknowledgement ====== */
-    .snsf {
-      margin-top: 2rem;
+    .snsf{
+      margin-top: 1.5rem;
       text-align: center;
       color: var(--muted);
       font-size: .95rem;
     }
-
-    .snsf img {
-      height: 38px;
+    .snsf img{
+      height: 40px;
       width: auto;
-      margin-bottom: .4rem;
+      margin-bottom: .35rem;
       display: inline-block;
     }
 
-    /* ====== Buttons ====== */
-    .actions {
+    /* ====== Buttons (colors matched to logos) ====== */
+    .actions{
       margin-top: 2rem;
       display: flex;
-      justify-content: center;
-      gap: .75rem;
+      gap: .8rem;
       flex-wrap: wrap;
+      justify-content: center;
     }
-
-    .btn {
+    .btn{
+      appearance: none;
       border: 1px solid var(--border);
-      background: white;
+      background: #ffffff;
       color: #0b1220;
-      padding: .7rem 1rem;
+      padding: .72rem 1.05rem;
       border-radius: 10px;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
       box-shadow: var(--shadow);
+      transition: transform .06s ease, box-shadow .12s ease, filter .12s ease;
     }
+    .btn:hover{ transform: translateY(-1px); filter: saturate(1.1); }
+    .btn:active{ transform: translateY(0); }
+    .btn:focus-visible{ outline: 3px solid var(--accent-2); outline-offset: 2px; }
 
-    .btn.primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: white;
+    .btn.spz{
+      background: var(--spz);
       border: 0;
+      color: #ffffff;
+    }
+    .btn.hslu{
+      background: var(--hslu);
+      border: 0;
+      color: #ffffff;
     }
 
     /* ====== Footer ====== */
-    footer {
+    footer{
       padding: 1.25rem 1rem 2rem;
       color: var(--muted);
     }
-
-    .footer-inner {
+    .footer-inner{
       max-width: 1100px;
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 1rem;
       flex-wrap: wrap;
       border-top: 1px dashed var(--border);
       padding-top: 1rem;
     }
-
-    .foot-links {
-      display: flex;
-      gap: 1rem;
+    .foot-links{
+      display: flex; gap: 1rem; flex-wrap: wrap;
+    }
+    .foot-links a{
+      color: inherit; text-decoration: none; border-bottom: 1px dotted var(--border);
     }
 
-    .foot-links a {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 1px dotted var(--border);
+    /* ====== Small screens ====== */
+    @media (max-width: 520px){
+      .logo-row{ grid-auto-flow: row; }
+      nav a{ margin-left: .75rem; }
     }
   </style>
 </head>
@@ -245,13 +251,13 @@
   <div class="wrapper">
     <header>
       <a class="brand" href="#top">
-        <div class="logo">X</div>
+        <div class="logo" aria-hidden="true">X</div>
         <div>
           XAI Data Science Lab<br>
           <small>SmartRehab Project</small>
         </div>
       </a>
-      <nav class="foot-links">
+      <nav aria-label="Site">
         <a href="#about">About</a>
         <a href="#publications">Publications</a>
         <a href="#contact">Contact</a>
@@ -259,14 +265,15 @@
     </header>
 
     <main class="hero" id="about">
-      <section class="card">
-        <h1>SmartRehab</h1>
+      <section class="card" role="region" aria-labelledby="title">
+        <h1 id="title">SmartRehab</h1>
         <p class="lead">
           SmartRehab is a research initiative supported by the Swiss National Science Foundation (SNSF), conducted in partnership with the Swiss Paraplegic Centre and Lucerne University of Applied Sciences and Arts (HSLU). Our work focuses on <b>explainable AI in rehabilitation</b>—developing transparent, trustworthy models that clinicians can interpret and act on—alongside data-driven approaches to enhance recovery and improve patient outcomes.
         </p>
         <p class="meta">Principal investigators and collaborators span machine learning, clinical rehabilitation, and data science.</p>
 
-        <div class="partners">
+        <!-- Partner strip -->
+        <div class="partners" aria-label="Project partners">
           <div class="label">In partnership with</div>
           <div class="logo-row">
             <a class="partner" href="#" aria-label="Swiss Paraplegic Centre">
@@ -281,13 +288,13 @@
 
           <div class="snsf">
             <img src="snsf_logo.png" alt="Swiss National Science Foundation (SNSF) logo">
-            <div>Supported by the Swiss National Science Foundation (SNSF)</div>
+            <div><span style="color:var(--snsf-red); font-weight:700;">Supported by the Swiss National Science Foundation (SNSF)</span></div>
           </div>
         </div>
 
         <div class="actions">
-          <a class="btn primary" href="#publications">View Publications</a>
-          <a class="btn" href="#contact">Get in Touch</a>
+          <a class="btn spz" href="#publications">View Publications</a>
+          <a class="btn hslu" href="#contact">Get in Touch</a>
         </div>
       </section>
     </main>
