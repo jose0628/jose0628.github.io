@@ -14,7 +14,7 @@
       --accent: #0ea5e9;     /* sky-500 */
       --accent-2: #6366f1;   /* indigo-500 */
       --ring: rgba(14,165,233,.25);
-      --card: rgba(255,255,255,.75);
+      --card: rgba(255,255,255,.78);
       --border: rgba(0,0,0,.08);
       --shadow: 0 10px 30px rgba(2,6,23,.08), 0 2px 8px rgba(2,6,23,.04);
       --serif: Georgia, "Times New Roman", Times, "Noto Serif", serif;
@@ -83,11 +83,11 @@
       font-weight: 500;
     }
 
-    /* ====== Hero / Intro ====== */
+    /* ====== Hero ====== */
     .hero{
       display: grid;
       place-items: center;
-      padding: 4.5rem 1rem 2.5rem;
+      padding: 4.2rem 1rem 1.5rem;
     }
     .card{
       backdrop-filter: blur(6px);
@@ -96,7 +96,7 @@
       border: 1px solid var(--border);
       border-radius: 16px;
       box-shadow: var(--shadow);
-      max-width: 950px;
+      max-width: 980px;
       padding: 3.25rem clamp(1rem, 3vw, 3rem);
       text-align: center;
     }
@@ -115,16 +115,58 @@
       max-width: 75ch;
       text-wrap: pretty;
     }
-    .lead b{
-      font-weight: 700;
-    }
+    .lead b{ font-weight: 700; }
     .meta{
-      margin-top: 1.25rem;
+      margin-top: 1.1rem;
       color: var(--muted);
       font-size: .98rem;
     }
 
-    /* ====== Badges / actions ====== */
+    /* ====== Partner bar ====== */
+    .partners{
+      margin: 2.25rem auto 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: .75rem;
+      align-items: center;
+      justify-items: center;
+    }
+    .partners .label{
+      color: var(--muted);
+      font-size: .9rem;
+      letter-spacing: .3px;
+      text-transform: uppercase;
+    }
+    .logo-row{
+      display: grid;
+      grid-auto-flow: column;
+      gap: 1.75rem;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .partner{
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .4rem .6rem;
+      border-radius: 10px;
+      background: rgba(255,255,255,.55);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .partner img{
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+    .partner span{
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: .2px;
+    }
+
+    /* ====== Actions ====== */
     .actions{
       margin-top: 2rem;
       display: flex;
@@ -201,6 +243,22 @@
           SmartRehab is a research initiative supported by the Swiss National Science Foundation (SNSF), conducted in partnership with the Swiss Paraplegic Centre. Our work focuses on <b>explainable AI in rehabilitation</b>—developing transparent, trustworthy models that clinicians can interpret and act on—alongside data-driven approaches to enhance recovery and improve patient outcomes.
         </p>
         <p class="meta">Principal investigators and collaborators span machine learning, clinical rehabilitation, and data science.</p>
+
+        <!-- Partner strip -->
+        <div class="partners" aria-label="Project partners">
+          <div class="label">In partnership with</div>
+          <div class="logo-row">
+            <a class="partner" href="#" aria-label="Swiss Paraplegic Centre">
+              <img src="7c4df955-e75c-4cca-80de-0c9d93106421.png" alt="Swiss Paraplegic Centre logo">
+              <span>Swiss Paraplegic Centre</span>
+            </a>
+            <a class="partner" href="#" aria-label="HSLU - Lucerne University of Applied Sciences and Arts">
+              <img src="2835968c-9b0c-43d7-b596-12b9c6bfeb06.png" alt="HSLU logo">
+              <span>HSLU</span>
+            </a>
+          </div>
+        </div>
+
         <div class="actions">
           <a class="btn primary" href="#publications">View Publications</a>
           <a class="btn" href="#contact">Get in Touch</a>
