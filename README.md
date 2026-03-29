@@ -20,7 +20,7 @@ The project aims to make intelligent rehabilitation systems **trustworthy, inter
 
 The project website is available at:
 
-🔗 **[https://smartrehab.datasciencelab.ch](https://smartrehab.datasciencelab.ch)**
+🔗 **[https://josemancera.datasciencelab.ch](https://josemancera.datasciencelab.ch)**
 
 The site is hosted via **GitHub Pages**.
 
