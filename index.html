@@ -3,309 +3,1423 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SmartRehab — XAI Data Science Lab</title>
-  <meta name="description" content="SmartRehab: Explainable AI in rehabilitation — XAI Data Science Lab">
-  <!-- Roboto font -->
+  <title>José A. Mancera | Applied AI Researcher, Lecturer, and PhD Candidate</title>
+  <meta name="description" content="Professional profile of José A. Mancera: applied AI researcher, lecturer, and PhD candidate working across explainable AI, recommender systems, data science, and responsible digital systems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,500;9..144,600&amp;display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "José A. Mancera",
+      "jobTitle": [
+        "Applied Data Science Researcher",
+        "Lecturer",
+        "PhD Candidate in Computer Science and Artificial Intelligence"
+      ],
+      "image": "jose-mancera-headshot.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Switzerland"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Fribourg"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Bern"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "EPFL"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Monterrey Institute of Technology and Higher Education"
+        }
+      ],
+      "affiliation": [
+        {
+          "@type": "Organization",
+          "name": "Beekeeper AG"
+        },
+        {
+          "@type": "Organization",
+          "name": "Lucerne University of Applied Sciences and Arts"
+        },
+        {
+          "@type": "Organization",
+          "name": "University of Fribourg"
+        }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/jose0628/",
+        "https://orcid.org/0000-0003-3837-6524",
+        "https://github.com/jose0628",
+        "https://www.hslu.ch/en/lucerne-school-of-business/about-us/people-finder/person-detail-site/?pid=5892"
+      ]
+    }
+  </script>
   <style>
-    :root{
-      --bg: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --ring: rgba(14,165,233,.25);
-      --card: #ffffff;
-      --border: rgba(0,0,0,.08);
-      --shadow: 0 10px 30px rgba(2,6,23,.06), 0 2px 8px rgba(2,6,23,.04);
-      --sans: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-      --spz: #f16b5f;
-      --hslu: #009fe3;
-      --snsf-red: #1434A4;
+    :root {
+      --bg: #f4efe8;
+      --bg-deep: #0f2330;
+      --panel: rgba(255, 255, 255, 0.88);
+      --panel-strong: #ffffff;
+      --ink: #0f2330;
+      --muted: #5a6973;
+      --line: rgba(15, 35, 48, 0.12);
+      --shadow: 0 24px 80px rgba(15, 35, 48, 0.14);
+      --shadow-soft: 0 16px 40px rgba(15, 35, 48, 0.09);
+      --accent: #ca6236;
+      --accent-deep: #a74d26;
+      --accent-cool: #2f7f98;
+      --accent-cool-soft: #cfe7ee;
+      --accent-leaf: #8cab57;
+      --accent-sand: #f2dcc8;
+      --heat-0: #edf0f2;
+      --heat-1: #dce8ec;
+      --heat-2: #bad7df;
+      --heat-3: #78b6c7;
+      --heat-4: #377f98;
+      --heat-5: #173d50;
+      --maxw: 1180px;
+      --radius: 28px;
+      --sans: "Manrope", "Segoe UI", sans-serif;
+      --serif: "Fraunces", Georgia, serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--sans);
       margin: 0;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .wrapper {
-      min-height: 100vh;
-      display: grid;
-      grid-template-rows: auto 1fr auto;
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.65;
       background:
-        radial-gradient(900px 400px at 12% -10%, rgba(0,159,227,.06), transparent 55%),
-        radial-gradient(900px 400px at 90% 110%, rgba(241,107,95,.07), transparent 55%);
+        radial-gradient(circle at top left, rgba(202, 98, 54, 0.16), transparent 34%),
+        radial-gradient(circle at 82% 12%, rgba(47, 127, 152, 0.18), transparent 28%),
+        linear-gradient(180deg, #f8f3ee 0%, #f4efe8 34%, #eef2f4 100%);
+      min-height: 100vh;
     }
 
-    /* ===== Header ===== */
-    header {
-      padding: 1.1rem 1rem;
-      max-width: 1100px;
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.28;
+      background-image:
+        linear-gradient(rgba(15, 35, 48, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 35, 48, 0.03) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.65), transparent 80%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page-shell {
+      width: min(calc(100% - 2rem), var(--maxw));
       margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(244, 239, 232, 0.72);
+      border-bottom: 1px solid rgba(15, 35, 48, 0.06);
+    }
+
+    .site-header .page-shell {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem 0;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: .75rem;
+      gap: 0.9rem;
       text-decoration: none;
-      color: inherit;
-      font-weight: 700;
     }
 
-    .logo {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      background: linear-gradient(135deg, var(--hslu), var(--spz));
-      color: white;
+    .brand-mark {
+      width: 2.9rem;
+      height: 2.9rem;
+      border-radius: 1rem;
       display: grid;
       place-items: center;
+      color: #fff;
       font-weight: 800;
-      font-size: 1.2rem;
-      box-shadow: 0 6px 16px var(--ring);
+      background:
+        linear-gradient(135deg, var(--accent) 0%, #e09156 45%, var(--accent-cool) 100%);
+      box-shadow: 0 10px 24px rgba(202, 98, 54, 0.22);
     }
 
-    nav a {
-      color: inherit;
-      text-decoration: none;
-      margin-left: 1rem;
-      border-bottom: 1px solid transparent;
-    }
-    nav a:hover { border-color: var(--border); }
-
-    /* ===== Hero ===== */
-    .hero {
-      display: grid;
-      place-items: center;
-      padding: 3.5rem 1rem 2rem;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-      max-width: 980px;
-      padding: 2.5rem clamp(1rem, 3vw, 3rem);
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0 0 1rem;
-      font-size: clamp(2.2rem, 4vw + .5rem, 3.6rem);
-      line-height: 1.15;
-      font-weight: 700;
-    }
-
-    .lead {
-      font-size: clamp(1.05rem, 1.2vw + .8rem, 1.25rem);
-      max-width: 75ch;
-      margin: 0 auto;
-    }
-
-    .lead b { font-weight: 700; }
-
-    .meta {
-      margin-top: 1rem;
-      color: var(--muted);
-      font-size: .98rem;
-    }
-
-    /* ===== Partners ===== */
-    .partners {
-      margin: 2rem auto 0;
-      text-align: center;
-    }
-
-    .partners .label {
-      color: var(--muted);
-      font-size: .85rem;
-      letter-spacing: .3px;
-      text-transform: uppercase;
-      margin-bottom: .75rem;
-    }
-
-    .logo-row {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .partner {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: .6rem .8rem;
-      border-radius: 10px;
-      background: #f9fafb;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      min-width: 160px;
-      transition: transform .08s ease;
-    }
-
-    .partner:hover {
-      transform: translateY(-2px);
-    }
-
-    .partner img {
-      height: auto;
-      width: 90px; /* consistent width for proportion */
+    .brand-copy strong,
+    .brand-copy span {
       display: block;
+      line-height: 1.15;
     }
 
-    .snsf img {
-      width: 100px; /* SNSF slightly larger for readability */
-      height: auto;
+    .brand-copy strong {
+      font-size: 0.98rem;
+      letter-spacing: 0.02em;
     }
 
-    .snsf-note {
-      color: var(--snsf-red);
-      font-weight: 600;
-      font-size: .95rem;
-      margin-top: .25rem;
+    .brand-copy span {
+      font-size: 0.76rem;
+      color: var(--muted);
+      margin-top: 0.18rem;
     }
 
-    /* ===== Buttons ===== */
-    .actions {
-      margin-top: 2rem;
+    .nav {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
-      gap: .8rem;
+      gap: 1rem;
+      align-items: center;
+      justify-content: flex-end;
     }
 
-    .btn {
-      border: 1px solid var(--border);
-      background: #ffffff;
-      padding: .72rem 1.05rem;
-      border-radius: 10px;
+    .nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.94rem;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      color: var(--ink);
+    }
+
+    .hero {
+      padding: 3.5rem 0 2rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-card {
+      border-radius: var(--radius);
+      border: 1px solid rgba(15, 35, 48, 0.08);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy {
+      padding: clamp(1.5rem, 3vw, 2.8rem);
+      background:
+        radial-gradient(circle at top right, rgba(202, 98, 54, 0.17), transparent 34%),
+        linear-gradient(160deg, rgba(255, 255, 255, 0.95), rgba(248, 244, 239, 0.93));
+    }
+
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      right: -2rem;
+      bottom: -2rem;
+      width: 11rem;
+      height: 11rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(47, 127, 152, 0.18), transparent 70%);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.4rem 0.82rem;
+      border-radius: 999px;
+      border: 1px solid rgba(47, 127, 152, 0.18);
+      background: rgba(47, 127, 152, 0.08);
+      color: var(--accent-cool);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 0.52rem;
+      height: 0.52rem;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(202, 98, 54, 0.12);
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.08;
+    }
+
+    .hero h1 {
+      margin-top: 1.25rem;
+      font-family: var(--serif);
+      font-size: clamp(2.9rem, 6vw, 5.3rem);
+      letter-spacing: -0.04em;
+      max-width: 11ch;
+    }
+
+    .subtitle {
+      margin: 1rem 0 1.15rem;
+      font-size: clamp(1.06rem, 1.4vw, 1.28rem);
+      color: var(--muted);
+      max-width: 54ch;
+    }
+
+    .intro {
+      margin: 0;
+      max-width: 62ch;
+      font-size: 1rem;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1.4rem 0 1.9rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .chip {
+      padding: 0.58rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(15, 35, 48, 0.09);
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 0.92rem;
+      box-shadow: 0 8px 20px rgba(15, 35, 48, 0.05);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.88rem 1.15rem;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 35, 48, 0.1);
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--ink);
       text-decoration: none;
       font-weight: 700;
-      box-shadow: var(--shadow);
-      transition: transform .06s ease, box-shadow .12s ease, filter .12s ease;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      box-shadow: var(--shadow-soft);
     }
 
-    .btn:hover {
-      transform: translateY(-1px);
-      filter: saturate(1.1);
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(15, 35, 48, 0.16);
     }
 
-    .btn.spz {
-      background: var(--spz);
-      border: 0;
+    .button.primary {
+      background: linear-gradient(135deg, var(--accent) 0%, #dd8b54 100%);
       color: #fff;
+      border-color: transparent;
     }
 
-    .btn.hslu {
-      background: var(--hslu);
-      border: 0;
-      color: #fff;
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+      position: relative;
+      z-index: 1;
     }
 
-    /* ===== Footer ===== */
-    footer {
-      padding: 1.25rem 1rem 2rem;
+    .metric {
+      padding: 1rem 1rem 0.95rem;
+      border-radius: 1.2rem;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(15, 35, 48, 0.08);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.65rem;
+      font-weight: 800;
+      margin-bottom: 0.2rem;
+    }
+
+    .metric span {
+      display: block;
       color: var(--muted);
+      font-size: 0.9rem;
     }
 
-    .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      border-top: 1px dashed var(--border);
-      padding-top: 1rem;
+    .hero-card {
+      background:
+        linear-gradient(180deg, rgba(15, 35, 48, 0.98), rgba(15, 35, 48, 0.9)),
+        linear-gradient(140deg, rgba(47, 127, 152, 0.65), rgba(202, 98, 54, 0.5));
+      color: #eef5f8;
+      display: grid;
+      grid-template-rows: auto 1fr;
     }
 
-    .foot-links {
-      display: flex;
+    .hero-card img {
+      width: 100%;
+      max-height: 440px;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .profile-copy {
+      padding: 1.4rem 1.4rem 1.5rem;
+      display: grid;
       gap: 1rem;
     }
 
-    .foot-links a {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 1px dotted var(--border);
+    .profile-copy h2 {
+      font-size: 1.35rem;
+      font-family: var(--serif);
+      letter-spacing: -0.03em;
     }
 
-    @media (max-width: 520px) {
-      .logo-row { flex-direction: column; }
+    .profile-copy p {
+      margin: 0;
+      color: rgba(238, 245, 248, 0.84);
+    }
+
+    .role-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .role-stack span {
+      display: inline-flex;
+      padding: 0.5rem 0.72rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    main section {
+      padding: 1.5rem 0 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .section-kicker {
+      display: inline-block;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.77rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.04em;
+      max-width: 12ch;
+    }
+
+    .section-text {
+      max-width: 58ch;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.3rem;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid rgba(15, 35, 48, 0.08);
+      box-shadow: var(--shadow-soft);
+      border-radius: 1.7rem;
+      padding: 1.4rem;
+      backdrop-filter: blur(12px);
+    }
+
+    .panel h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.9rem;
+      letter-spacing: -0.02em;
+    }
+
+    .dense-list {
+      display: grid;
+      gap: 0.9rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .dense-list li {
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid rgba(15, 35, 48, 0.08);
+    }
+
+    .dense-list li:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .dense-list strong {
+      display: block;
+      font-size: 0.96rem;
+      margin-bottom: 0.18rem;
+    }
+
+    .dense-list span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .interest-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .interest-cloud span {
+      padding: 0.78rem 0.92rem;
+      border-radius: 1rem;
+      background: rgba(47, 127, 152, 0.09);
+      border: 1px solid rgba(47, 127, 152, 0.16);
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .trajectory-panel {
+      padding: 1.4rem;
+      border-radius: 1.8rem;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(245, 248, 250, 0.96));
+      border: 1px solid rgba(15, 35, 48, 0.08);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .sankey-wrap {
+      overflow-x: auto;
+      padding-bottom: 0.25rem;
+    }
+
+    .sankey-wrap svg {
+      min-width: 1080px;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .trajectory-note {
+      margin: 0.85rem 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .exp-card {
+      padding: 1.25rem;
+      border-radius: 1.5rem;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(15, 35, 48, 0.08);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .exp-card time {
+      display: inline-block;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 800;
+      margin-bottom: 0.7rem;
+    }
+
+    .exp-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .publication-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .publication {
+      display: grid;
+      gap: 0.85rem;
+      padding: 1.25rem;
+      border-radius: 1.5rem;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(15, 35, 48, 0.08);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .pub-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      align-items: center;
+    }
+
+    .pub-meta span {
+      padding: 0.32rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: rgba(47, 127, 152, 0.09);
+      color: var(--accent-cool);
+    }
+
+    .publication h3 {
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .publication p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .publication a {
+      color: var(--accent-deep);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .publication a:hover,
+    .publication a:focus-visible {
+      text-decoration: underline;
+    }
+
+    .heat-panel {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .heatmap-table-wrap {
+      overflow-x: auto;
+      border-radius: 1.5rem;
+      border: 1px solid rgba(15, 35, 48, 0.08);
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: var(--shadow-soft);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    th,
+    td {
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid rgba(15, 35, 48, 0.08);
+      text-align: left;
+      vertical-align: middle;
+      font-size: 0.92rem;
+    }
+
+    th {
+      color: var(--muted);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 0.74rem;
+      background: rgba(15, 35, 48, 0.02);
+    }
+
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .heat-cell {
+      width: 2.15rem;
+      height: 2.15rem;
+      border-radius: 0.75rem;
+      display: inline-block;
+      border: 1px solid rgba(15, 35, 48, 0.06);
+    }
+
+    .lvl-0 { background: var(--heat-0); }
+    .lvl-1 { background: var(--heat-1); }
+    .lvl-2 { background: var(--heat-2); }
+    .lvl-3 { background: var(--heat-3); }
+    .lvl-4 { background: var(--heat-4); }
+    .lvl-5 { background: var(--heat-5); }
+
+    .legend,
+    .evidence {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .legend span,
+    .evidence span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.56rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(15, 35, 48, 0.08);
+      font-size: 0.88rem;
+    }
+
+    .legend i {
+      width: 0.78rem;
+      height: 0.78rem;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .collaboration-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 1.2rem;
+      align-items: stretch;
+    }
+
+    .spotlight {
+      display: grid;
+      gap: 0.85rem;
+      padding: 1.35rem;
+      border-radius: 1.7rem;
+      background:
+        linear-gradient(140deg, rgba(15, 35, 48, 0.96), rgba(25, 65, 82, 0.96));
+      color: #eef5f8;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .spotlight p {
+      margin: 0;
+      color: rgba(238, 245, 248, 0.82);
+    }
+
+    .spotlight strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.65rem;
+      letter-spacing: -0.03em;
+    }
+
+    .logo-panels {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .logo-card {
+      display: grid;
+      gap: 0.8rem;
+      align-content: start;
+      padding: 1.2rem;
+      border-radius: 1.5rem;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(15, 35, 48, 0.08);
+      box-shadow: var(--shadow-soft);
+      min-height: 100%;
+    }
+
+    .logo-frame {
+      min-height: 6rem;
+      display: grid;
+      place-items: center;
+      border-radius: 1rem;
+      background: rgba(15, 35, 48, 0.03);
+      padding: 0.75rem;
+    }
+
+    .logo-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    footer {
+      padding: 2.4rem 0 3rem;
+    }
+
+    .footer-panel {
+      display: grid;
+      gap: 0.9rem;
+      padding: 1.35rem 1.4rem;
+      border-radius: 1.5rem;
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid rgba(15, 35, 48, 0.08);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .footer-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .reveal {
+      animation: fadeUp 720ms ease both;
+    }
+
+    .delay-1 { animation-delay: 100ms; }
+    .delay-2 { animation-delay: 180ms; }
+    .delay-3 { animation-delay: 260ms; }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .grid-2,
+      .collaboration-grid,
+      .publication-grid,
+      .experience-grid,
+      .logo-panels {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card img {
+        max-height: 560px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .site-header .page-shell {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding-top: 2.2rem;
+      }
+
+      .hero h1 {
+        max-width: none;
+      }
+
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
     }
   </style>
 </head>
-
 <body>
-  <div class="wrapper">
-    <header>
+  <header class="site-header">
+    <div class="page-shell">
       <a class="brand" href="#top">
-        <div class="logo">X</div>
-        <div>
-          XAI Data Science Lab<br>
-          <small>SmartRehab Project</small>
-        </div>
+        <span class="brand-mark">JM</span>
+        <span class="brand-copy">
+          <strong>José A. Mancera</strong>
+          <span>Applied AI Researcher · Lecturer · PhD Candidate</span>
+        </span>
       </a>
-      <nav>
+      <nav class="nav" aria-label="Section navigation">
         <a href="#about">About</a>
+        <a href="#trajectory">Trajectory</a>
         <a href="#publications">Publications</a>
-        <a href="#contact">Contact</a>
+        <a href="#code">Code</a>
+        <a href="#ecosystem">Ecosystem</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main class="hero" id="about">
-      <section class="card">
-        <h1>SmartRehab</h1>
-        <p class="lead">
-          SmartRehab is a research initiative supported by the Swiss National Science Foundation (SNSF), conducted in partnership with the Swiss Paraplegic Centre and Lucerne University of Applied Sciences and Arts (HSLU). Our work focuses on <b>explainable AI in rehabilitation</b>—developing transparent, trustworthy models that clinicians can interpret and act on—alongside data-driven approaches to enhance recovery and improve patient outcomes.
-        </p>
-        <p class="meta">Principal investigators and collaborators span machine learning, clinical rehabilitation, and data science.</p>
+  <div class="page-shell">
+    <main>
+      <section class="hero" id="top">
+        <div class="hero-grid">
+          <div class="hero-copy reveal">
+            <span class="eyebrow">Professional Profile</span>
+            <h1>From telecom systems to explainable AI research.</h1>
+            <p class="subtitle">Applied data science researcher at Beekeeper AG, lecturer at Lucerne University of Applied Sciences and Arts, and PhD candidate in Computer Science and Artificial Intelligence at the University of Fribourg.</p>
+            <p class="intro">José A. Mancera works across industry and academia, building a career that moves from electronics and communications engineering into software systems, machine learning, recommender systems, explainable AI, digital ethics, and Generative AI. His public work shows a consistent throughline: translating complex technical systems into practical decision-support tools.</p>
 
-        <div class="partners">
-          <div class="label">In partnership with</div>
-          <div class="logo-row">
-            <a class="partner" href="#" aria-label="Swiss Paraplegic Centre">
-              <img src="7c4df955-e75c-4cca-80de-0c9d93106421.png" alt="Swiss Paraplegic Centre logo">
-            </a>
-            <a class="partner" href="#" aria-label="HSLU - Lucerne University of Applied Sciences and Arts">
-              <img src="2835968c-9b0c-43d7-b596-12b9c6bfeb06.png" alt="HSLU logo">
-            </a>
-            <a class="partner snsf" href="#" aria-label="Swiss National Science Foundation (SNSF)">
-              <img src="snsf_logo.png" alt="SNSF logo">
-            </a>
+            <div class="chip-row" aria-label="Research and role highlights">
+              <span class="chip">Explainable AI</span>
+              <span class="chip">Recommender Systems</span>
+              <span class="chip">Generative AI</span>
+              <span class="chip">Digital Ethics</span>
+              <span class="chip">Data Engineering</span>
+              <span class="chip">Applied ML for Health and Civic Systems</span>
+            </div>
+
+            <div class="hero-actions">
+              <a class="button primary" href="#publications">Selected publications</a>
+              <a class="button" href="https://orcid.org/0000-0003-3837-6524" target="_blank" rel="noreferrer">ORCID</a>
+              <a class="button" href="https://github.com/jose0628" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="button" href="https://www.linkedin.com/in/jose0628/" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
+
+            <div class="metrics">
+              <div class="metric">
+                <strong>3</strong>
+                <span>Current roles across research, teaching, and industry</span>
+              </div>
+              <div class="metric">
+                <strong>19</strong>
+                <span>Public repositories visible on GitHub as of March 29, 2026</span>
+              </div>
+              <div class="metric">
+                <strong>2006 → 2026</strong>
+                <span>Career arc spanning telecom engineering to AI research</span>
+              </div>
+            </div>
           </div>
-          <div class="snsf-note">Supported by the Swiss National Science Foundation (SNSF)</div>
+
+          <aside class="hero-card reveal delay-1" aria-labelledby="profile-photo-title">
+            <img src="jose-mancera-headshot.jpg" alt="Portrait of José A. Mancera">
+            <div class="profile-copy">
+              <div>
+                <h2 id="profile-photo-title">Profile photo and description</h2>
+                <p>Public professional portrait paired with a concise overview for recruiters, collaborators, and research partners.</p>
+              </div>
+              <div class="role-stack" aria-label="Current positions">
+                <span>Beekeeper AG</span>
+                <span>HSLU Lecturer</span>
+                <span>University of Fribourg</span>
+              </div>
+              <p>Current focus areas include recommender systems, fuzzy mathematics, explainable AI, Generative AI, and responsible digital decision-making.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">Academic + Applied</span>
+            <h2 class="section-title">A cross-sector profile shaped by systems thinking.</h2>
+          </div>
+          <p class="section-text">Public information from HSLU, ORCID, and GitHub shows a professional trajectory built across telecom, aerospace, software engineering, machine learning, teaching, and AI research in Switzerland, Canada, Mexico, and Europe.</p>
         </div>
 
-        <div class="actions">
-          <a class="btn spz" href="#publications">View Publications</a>
-          <a class="btn hslu" href="#contact">Get in Touch</a>
+        <div class="grid-2">
+          <article class="panel reveal delay-1">
+            <h3>Education</h3>
+            <ul class="dense-list">
+              <li>
+                <strong>PhD Candidate, Computer Science and Artificial Intelligence</strong>
+                <span>University of Fribourg, ongoing</span>
+              </li>
+              <li>
+                <strong>M.A. in Information Management, magna cum laude</strong>
+                <span>University of Fribourg</span>
+              </li>
+              <li>
+                <strong>M.Sc. in Computer Science, magna cum laude</strong>
+                <span>University of Bern</span>
+              </li>
+              <li>
+                <strong>Minor in Space Technologies</strong>
+                <span>EPFL, Lausanne</span>
+              </li>
+              <li>
+                <strong>B.Sc. in Electronics and Communications</strong>
+                <span>Monterrey Institute of Technology and Higher Education, Mexico</span>
+              </li>
+              <li>
+                <strong>Additional specialization tracks</strong>
+                <span>Mobile Devices and Information Technology at Jönköping University; Satellite Technology and Signal Processing at Copenhagen University College of Engineering</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="panel reveal delay-2">
+            <h3>Research and teaching interests</h3>
+            <div class="interest-cloud">
+              <span>Explainable Artificial Intelligence</span>
+              <span>Recommender Systems</span>
+              <span>Fuzzy Mathematics</span>
+              <span>Generative AI</span>
+              <span>Digital Ethics</span>
+              <span>Data Visualization</span>
+              <span>Search and Optimization</span>
+              <span>Data Warehouses and Data Lakes</span>
+              <span>Algorithms and Data Structures</span>
+              <span>AI Competitions and Hands-on Teaching</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="trajectory">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">Career Trajectory</span>
+            <h2 class="section-title">A Sankey-style timeline of the move from engineering foundations to AI research.</h2>
+          </div>
+          <p class="section-text">This diagram summarizes the evolution from electronics and communications engineering into telecom, space systems, software engineering, data science, applied AI, teaching, and doctoral research.</p>
+        </div>
+
+        <div class="trajectory-panel reveal delay-1">
+          <div class="sankey-wrap">
+            <svg viewBox="0 0 1200 500" role="img" aria-labelledby="sankey-title sankey-desc">
+              <title id="sankey-title">Career evolution timeline for José A. Mancera</title>
+              <desc id="sankey-desc">A Sankey-style timeline showing the progression from electronics and communications education through telecom engineering, space and software systems, data science and machine learning, applied AI in industry, lecturing, and doctoral AI research.</desc>
+              <defs>
+                <linearGradient id="flowWarm" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#e2b28e" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#ca6236" stop-opacity="0.9"/>
+                </linearGradient>
+                <linearGradient id="flowCool" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#7fb8c7" stop-opacity="0.85"/>
+                  <stop offset="100%" stop-color="#2f7f98" stop-opacity="0.9"/>
+                </linearGradient>
+                <linearGradient id="flowDeep" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#7a9f66" stop-opacity="0.85"/>
+                  <stop offset="100%" stop-color="#173d50" stop-opacity="0.92"/>
+                </linearGradient>
+                <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="rgba(15,35,48,0.18)"/>
+                </filter>
+              </defs>
+
+              <rect x="0" y="0" width="1200" height="500" rx="26" fill="#f8fbfc"/>
+
+              <path d="M170 325 C220 325, 230 325, 260 325 L360 325 C390 325, 410 304, 440 284 L440 344 C410 364, 390 365, 360 365 L260 365 C230 365, 220 365, 170 365 Z" fill="url(#flowWarm)" opacity="0.95"/>
+              <path d="M170 295 C230 295, 300 210, 390 210 L390 250 C315 250, 245 323, 170 323 Z" fill="url(#flowCool)" opacity="0.8"/>
+              <path d="M530 96 C575 96, 605 122, 650 152 L650 198 C605 168, 575 136, 530 136 Z" fill="url(#flowCool)" opacity="0.78"/>
+              <path d="M560 272 C610 272, 640 272, 680 272 L800 272 C835 272, 860 272, 900 272 L900 340 C860 340, 835 340, 800 340 L680 340 C640 340, 610 340, 560 340 Z" fill="url(#flowDeep)" opacity="0.92"/>
+              <path d="M760 96 C820 96, 860 140, 900 200 L900 238 C855 180, 815 136, 760 136 Z" fill="url(#flowWarm)" opacity="0.74"/>
+              <path d="M990 220 C1040 220, 1065 184, 1095 128 L1095 176 C1065 228, 1040 260, 990 260 Z" fill="url(#flowCool)" opacity="0.88"/>
+              <path d="M990 282 C1042 282, 1067 320, 1095 360 L1095 420 C1065 380, 1040 342, 990 342 Z" fill="url(#flowDeep)" opacity="0.92"/>
+
+              <g filter="url(#softShadow)">
+                <rect x="20" y="280" width="150" height="88" rx="18" fill="#173d50"/>
+                <rect x="220" y="280" width="160" height="88" rx="18" fill="#ca6236"/>
+                <rect x="220" y="76" width="160" height="78" rx="18" fill="#2f7f98"/>
+                <rect x="390" y="208" width="170" height="108" rx="18" fill="#e5f0f4"/>
+                <rect x="390" y="56" width="140" height="78" rx="18" fill="#f7e7d8"/>
+                <rect x="590" y="56" width="170" height="78" rx="18" fill="#f3ddd0"/>
+                <rect x="590" y="236" width="170" height="104" rx="18" fill="#d9ecf2"/>
+                <rect x="810" y="214" width="180" height="126" rx="18" fill="#173d50"/>
+                <rect x="1030" y="90" width="150" height="92" rx="18" fill="#2f7f98"/>
+                <rect x="1030" y="332" width="150" height="102" rx="18" fill="#1d4e63"/>
+              </g>
+
+              <g font-family="Manrope, sans-serif" text-anchor="middle">
+                <text x="95" y="312" fill="#ffffff" font-size="14" font-weight="800">B.Sc. Electronics</text>
+                <text x="95" y="330" fill="#ffffff" font-size="14" font-weight="800">&amp; Communications</text>
+                <text x="95" y="350" fill="rgba(255,255,255,0.74)" font-size="12">Engineering foundation</text>
+
+                <text x="300" y="312" fill="#ffffff" font-size="14" font-weight="800">Telecom Engineer</text>
+                <text x="300" y="330" fill="#ffffff" font-size="14" font-weight="800">Huawei + Nortel</text>
+                <text x="300" y="350" fill="rgba(255,255,255,0.74)" font-size="12">2006 to 2013</text>
+
+                <text x="300" y="104" fill="#ffffff" font-size="14" font-weight="800">Mobile Devices</text>
+                <text x="300" y="122" fill="#ffffff" font-size="14" font-weight="800">Satellite Tech</text>
+                <text x="300" y="140" fill="rgba(255,255,255,0.74)" font-size="12">Specialization layer</text>
+
+                <text x="475" y="236" fill="#173d50" font-size="15" font-weight="800">Space + Software Systems</text>
+                <text x="475" y="258" fill="#173d50" font-size="13" font-weight="700">Swiss Space Center, ELCA,</text>
+                <text x="475" y="276" fill="#173d50" font-size="13" font-weight="700">Swiss Space Systems, Schindler</text>
+                <text x="475" y="300" fill="#5a6973" font-size="12">2013 to 2017</text>
+
+                <text x="460" y="88" fill="#a74d26" font-size="14" font-weight="800">M.Sc.</text>
+                <text x="460" y="106" fill="#a74d26" font-size="14" font-weight="800">Computer Science</text>
+                <text x="460" y="124" fill="#5a6973" font-size="12">University of Bern</text>
+
+                <text x="675" y="88" fill="#a74d26" font-size="14" font-weight="800">M.A.</text>
+                <text x="675" y="106" fill="#a74d26" font-size="14" font-weight="800">Information Management</text>
+                <text x="675" y="124" fill="#5a6973" font-size="12">University of Fribourg</text>
+
+                <text x="675" y="270" fill="#173d50" font-size="15" font-weight="800">Data Science + ML</text>
+                <text x="675" y="292" fill="#173d50" font-size="13" font-weight="700">Fribourg research group,</text>
+                <text x="675" y="310" fill="#173d50" font-size="13" font-weight="700">CreditGate24, ML systems</text>
+                <text x="675" y="332" fill="#5a6973" font-size="12">2016 to 2018</text>
+
+                <text x="900" y="250" fill="#ffffff" font-size="16" font-weight="800">Applied AI in Industry</text>
+                <text x="900" y="272" fill="#ffffff" font-size="13" font-weight="700">Beekeeper AG</text>
+                <text x="900" y="290" fill="rgba(255,255,255,0.8)" font-size="12">data science research,</text>
+                <text x="900" y="306" fill="rgba(255,255,255,0.8)" font-size="12">GDPR-compliant systems,</text>
+                <text x="900" y="322" fill="rgba(255,255,255,0.8)" font-size="12">recommenders, AI products</text>
+
+                <text x="1105" y="122" fill="#ffffff" font-size="15" font-weight="800">Lecturer</text>
+                <text x="1105" y="142" fill="#ffffff" font-size="14" font-weight="800">HSLU</text>
+                <text x="1105" y="160" fill="rgba(255,255,255,0.78)" font-size="12">from 2022</text>
+
+                <text x="1105" y="366" fill="#ffffff" font-size="15" font-weight="800">PhD + AI Research</text>
+                <text x="1105" y="386" fill="#ffffff" font-size="14" font-weight="800">University of Fribourg</text>
+                <text x="1105" y="406" fill="rgba(255,255,255,0.78)" font-size="12">ongoing doctoral work</text>
+              </g>
+
+              <g font-family="Manrope, sans-serif" fill="#5a6973" font-size="12" font-weight="700">
+                <text x="20" y="470">2006</text>
+                <text x="250" y="470">2013</text>
+                <text x="430" y="470">2016</text>
+                <text x="640" y="470">2019</text>
+                <text x="860" y="470">2022</text>
+                <text x="1080" y="470">2026</text>
+              </g>
+            </svg>
+          </div>
+          <p class="trajectory-note">Timeline synthesis based on public education and work history. The bands show how engineering foundations, additional specializations, and graduate studies converge into applied AI research, teaching, and doctoral work.</p>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">Experience Snapshot</span>
+            <h2 class="section-title">Selected roles across telecom, space systems, software, and AI.</h2>
+          </div>
+          <p class="section-text">The roles below reflect the public HSLU profile and emphasize the progressive move from communications infrastructure toward modern applied AI.</p>
+        </div>
+
+        <div class="experience-grid">
+          <article class="exp-card reveal delay-1">
+            <time>2006 to 2013</time>
+            <h3>Telecom engineering</h3>
+            <p>Telecom Engineer Solutions at Huawei in Mexico City, followed by Senior Telecommunications Engineer at Nortel Networks in Montreal.</p>
+          </article>
+          <article class="exp-card reveal delay-2">
+            <time>2013 to 2016</time>
+            <h3>Space and software systems</h3>
+            <p>Research Assistant at the Swiss Space Center at EPFL, Software Engineer at ELCA, and Software Engineer / Space System Engineer at Swiss Space Systems.</p>
+          </article>
+          <article class="exp-card reveal delay-3">
+            <time>2016 to 2018</time>
+            <h3>Machine learning transition</h3>
+            <p>Data Scientist at Schindler plus Senior Big Data Machine Learning Scientist with the Information System Research Group at the University of Fribourg.</p>
+          </article>
+          <article class="exp-card reveal delay-1">
+            <time>2017 to 2018</time>
+            <h3>Fintech and software delivery</h3>
+            <p>Software Engineer at CreditGate24, adding practical product and delivery experience to the research profile.</p>
+          </article>
+          <article class="exp-card reveal delay-2">
+            <time>2019 to present</time>
+            <h3>Applied Data Science Researcher</h3>
+            <p>Beekeeper AG in Zurich, working on applied AI, data-driven product research, and privacy-aware user characterization strategies.</p>
+          </article>
+          <article class="exp-card reveal delay-3">
+            <time>2022 to present</time>
+            <h3>Lecturer and doctoral researcher</h3>
+            <p>Teaching AI, optimization, data systems, and visualization at HSLU while pursuing doctoral research in AI at the University of Fribourg.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="publications">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">Selected Publications</span>
+            <h2 class="section-title">Recent public research drawn from the ORCID record.</h2>
+          </div>
+          <p class="section-text">A selected view of public journal and conference outputs across health AI, digital ethics, civic data, recommender systems, and privacy-aware machine learning.</p>
+        </div>
+
+        <div class="publication-grid">
+          <article class="publication reveal delay-1">
+            <div class="pub-meta">
+              <span>2025</span>
+              <span>Journal</span>
+            </div>
+            <h3>Personalized machine learning models for noninvasive hypoglycemia detection in people with type 1 diabetes using a smartwatch</h3>
+            <p>PLOS One. A health AI study focused on individualized modeling and feature importance during waking and sleeping times.</p>
+            <a href="https://doi.org/10.1371/journal.pone.0325956" target="_blank" rel="noreferrer">View DOI</a>
+          </article>
+
+          <article class="publication reveal delay-2">
+            <div class="pub-meta">
+              <span>2025</span>
+              <span>Conference</span>
+            </div>
+            <h3>Evaluation of Public Services Through the Lens of Digital Ethics</h3>
+            <p>Conference on Digital Government Research. Extends the profile into responsible digital governance and ethical evaluation of public services.</p>
+            <a href="https://doi.org/10.59490/dgo.2025.1033" target="_blank" rel="noreferrer">View DOI</a>
+          </article>
+
+          <article class="publication reveal delay-3">
+            <div class="pub-meta">
+              <span>2024</span>
+              <span>Conference</span>
+            </div>
+            <h3>From GenAI to Political Profiling Avatars: A Data-Driven Approach to Crafting Virtual Experts for Voting Advice Applications</h3>
+            <p>Connects Generative AI with political profiling and decision-support applications.</p>
+            <a href="https://doi.org/10.1145/3657054.3657092" target="_blank" rel="noreferrer">View DOI</a>
+          </article>
+
+          <article class="publication reveal delay-1">
+            <div class="pub-meta">
+              <span>2024</span>
+              <span>Conference</span>
+            </div>
+            <h3>User Characterization Strategies in GDPR-Compliant Environments: Beekeeper AG Case Study</h3>
+            <p>ICEDEG 2024. Bridges privacy regulation, enterprise systems, and AI-enabled user characterization in industry.</p>
+            <a href="https://doi.org/10.1109/icedeg61611.2024.10702054" target="_blank" rel="noreferrer">View DOI</a>
+          </article>
+
+          <article class="publication reveal delay-2">
+            <div class="pub-meta">
+              <span>2022</span>
+              <span>Journal</span>
+            </div>
+            <h3>GDPR-Compliant Social Network Link Prediction in a Graph DBMS: The Case of Know-How Development at Beekeeper</h3>
+            <p>Knowledge. A strong example of industry-grounded research on privacy-compliant graph-based intelligence.</p>
+            <a href="https://doi.org/10.3390/knowledge2020017" target="_blank" rel="noreferrer">View DOI</a>
+          </article>
+
+          <article class="publication reveal delay-3">
+            <div class="pub-meta">
+              <span>2019</span>
+              <span>Journal</span>
+            </div>
+            <h3>Dynamic profiles using sentiment analysis and Twitter data for voting advice applications</h3>
+            <p>Government Information Quarterly. A notable intersection of machine learning, public decision support, and social media analysis.</p>
+            <a href="https://doi.org/10.1016/j.giq.2019.03.003" target="_blank" rel="noreferrer">View DOI</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="code">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">Public Code Footprint</span>
+            <h2 class="section-title">A category heatmap based on public GitHub repositories and gists.</h2>
+          </div>
+          <p class="section-text">This view is intentionally category-based rather than commit-based. It reflects public projects and public gists only, so private and organization activity are not represented here.</p>
+        </div>
+
+        <div class="heat-panel">
+          <div class="heatmap-table-wrap reveal delay-1">
+            <table aria-describedby="heatmap-caption">
+              <thead>
+                <tr>
+                  <th scope="col">Category</th>
+                  <th scope="col">2013</th>
+                  <th scope="col">2020</th>
+                  <th scope="col">2021</th>
+                  <th scope="col">2022</th>
+                  <th scope="col">2024</th>
+                  <th scope="col">2025-26</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Identity and enterprise integration</td>
+                  <td><span class="heat-cell lvl-4" title="OpenID public repo"></span></td>
+                  <td><span class="heat-cell lvl-0" title="No strong public signal"></span></td>
+                  <td><span class="heat-cell lvl-1" title="Low public signal"></span></td>
+                  <td><span class="heat-cell lvl-1" title="Low public signal"></span></td>
+                  <td><span class="heat-cell lvl-5" title="Workday, SSO, metadata, API gists"></span></td>
+                  <td><span class="heat-cell lvl-3" title="Continued integration-oriented public snippets"></span></td>
+                </tr>
+                <tr>
+                  <td>Data engineering and warehousing</td>
+                  <td><span class="heat-cell lvl-0" title="No strong public signal"></span></td>
+                  <td><span class="heat-cell lvl-2" title="Applied analytics projects"></span></td>
+                  <td><span class="heat-cell lvl-5" title="Warehouse, lake, Airflow, Spark, Postgres, Cassandra repos"></span></td>
+                  <td><span class="heat-cell lvl-3" title="Notebook and applied coursework signal"></span></td>
+                  <td><span class="heat-cell lvl-2" title="Limited public data engineering signal"></span></td>
+                  <td><span class="heat-cell lvl-3" title="Pipelines and fundamentals repos"></span></td>
+                </tr>
+                <tr>
+                  <td>Machine learning and recommenders</td>
+                  <td><span class="heat-cell lvl-0" title="No strong public signal"></span></td>
+                  <td><span class="heat-cell lvl-5" title="IBM recommender, Starbucks, Airbnb analytics projects"></span></td>
+                  <td><span class="heat-cell lvl-3" title="ML-inflected data engineering projects"></span></td>
+                  <td><span class="heat-cell lvl-4" title="Movie recommender and data science training signal"></span></td>
+                  <td><span class="heat-cell lvl-4" title="Political profiling and AI-related work"></span></td>
+                  <td><span class="heat-cell lvl-4" title="ML pipeline and teaching materials"></span></td>
+                </tr>
+                <tr>
+                  <td>Cloud, automation, and MLOps</td>
+                  <td><span class="heat-cell lvl-0" title="No strong public signal"></span></td>
+                  <td><span class="heat-cell lvl-1" title="Low public signal"></span></td>
+                  <td><span class="heat-cell lvl-4" title="Airflow and pipeline repos"></span></td>
+                  <td><span class="heat-cell lvl-2" title="Moderate signal"></span></td>
+                  <td><span class="heat-cell lvl-5" title="Lambda, EC2, cloud automation gists"></span></td>
+                  <td><span class="heat-cell lvl-5" title="MLOps repo, DAGs, ML pipeline work"></span></td>
+                </tr>
+                <tr>
+                  <td>Teaching, notebooks, and tutorials</td>
+                  <td><span class="heat-cell lvl-0" title="No strong public signal"></span></td>
+                  <td><span class="heat-cell lvl-2" title="Portfolio-style projects"></span></td>
+                  <td><span class="heat-cell lvl-3" title="Project documentation and learning artifacts"></span></td>
+                  <td><span class="heat-cell lvl-4" title="Bootcamp and notebook-heavy material"></span></td>
+                  <td><span class="heat-cell lvl-3" title="Instructional gists and tutorials"></span></td>
+                  <td><span class="heat-cell lvl-5" title="HSLU fundamentals repo and applied how-to materials"></span></td>
+                </tr>
+                <tr>
+                  <td>Generative AI and experimentation</td>
+                  <td><span class="heat-cell lvl-0" title="No public signal"></span></td>
+                  <td><span class="heat-cell lvl-0" title="No public signal"></span></td>
+                  <td><span class="heat-cell lvl-0" title="No public signal"></span></td>
+                  <td><span class="heat-cell lvl-0" title="No public signal"></span></td>
+                  <td><span class="heat-cell lvl-4" title="Political profiling avatars repo"></span></td>
+                  <td><span class="heat-cell lvl-3" title="Apertus local LLM guide and related experimentation"></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="legend" aria-hidden="true">
+            <span><i class="lvl-0"></i>Minimal</span>
+            <span><i class="lvl-2"></i>Moderate</span>
+            <span><i class="lvl-4"></i>Strong</span>
+            <span><i class="lvl-5"></i>Very strong</span>
+          </div>
+
+          <div class="evidence" id="heatmap-caption">
+            <span>A-Recommender-System-for-IBM-Watson</span>
+            <span>Project-Data-Lake-Spark</span>
+            <span>Project-Data-Pipelines-AirFlow</span>
+            <span>OpenID-Basic-Profile-Authentication</span>
+            <span>Generative-AI-to-Political-Profiling-Avatars-</span>
+            <span>info9023-mlops</span>
+            <span>HSLU_Fundamentals_of_Data_Science</span>
+            <span>AWS, EC2, Workday, SSO, and API gists</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="ecosystem">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">Research Ecosystem</span>
+            <h2 class="section-title">Current academic and project context.</h2>
+          </div>
+          <p class="section-text">The existing site already referenced the SmartRehab collaboration, so this redesign keeps that context and reframes it as part of the broader professional profile.</p>
+        </div>
+
+        <div class="collaboration-grid">
+          <article class="spotlight reveal delay-1">
+            <strong>SmartRehab</strong>
+            <p>One of the public HSLU research projects linked to José Mancera focuses on optimizing rehabilitation services through explainable recommender systems. It is a natural bridge between applied AI, health contexts, and responsible decision support.</p>
+            <p>Other public projects include Swiss Digital Ethics Compass and work toward causal traffic predictions, showing a portfolio that ranges from healthcare and ethics to mobility and civic technology.</p>
+          </article>
+
+          <div class="logo-panels">
+            <article class="logo-card reveal delay-2">
+              <div class="logo-frame">
+                <img src="2835968c-9b0c-43d7-b596-12b9c6bfeb06.png" alt="Lucerne University of Applied Sciences and Arts logo">
+              </div>
+              <p>Teaching, research, and public faculty profile at the Lucerne School of Business.</p>
+            </article>
+            <article class="logo-card reveal delay-3">
+              <div class="logo-frame">
+                <img src="7c4df955-e75c-4cca-80de-0c9d93106421.png" alt="Swiss Paraplegic Centre logo">
+              </div>
+              <p>Health-oriented research context connected to rehabilitation and explainable recommender systems.</p>
+            </article>
+            <article class="logo-card reveal delay-1">
+              <div class="logo-frame">
+                <img src="snsf_logo.png" alt="Swiss National Science Foundation logo">
+              </div>
+              <p>Funding and national research context aligned with high-impact applied AI projects in Switzerland.</p>
+            </article>
+          </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <div class="footer-inner">
-        <div>© 2025 XAI Data Science Lab — <em>Advancing Explainable AI</em>. All rights reserved.</div>
-        <div class="foot-links">
-          <a href="#impressum">Impressum</a>
-          <a href="#privacy">Privacy</a>
-          <a href="#brand">Brand Assets</a>
+      <div class="footer-panel">
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/jose0628/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://orcid.org/0000-0003-3837-6524" target="_blank" rel="noreferrer">ORCID</a>
+          <a href="https://github.com/jose0628" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.hslu.ch/en/lucerne-school-of-business/about-us/people-finder/person-detail-site/?pid=5892" target="_blank" rel="noreferrer">HSLU profile</a>
         </div>
+        <p class="footer-note">This page is a curated professional profile assembled from public sources. The biography and education details are aligned to the public HSLU profile, the publication section is based on the ORCID record, and the code heatmap is a qualitative synthesis of public GitHub repositories and gists visible on March 29, 2026.</p>
       </div>
     </footer>
   </div>
