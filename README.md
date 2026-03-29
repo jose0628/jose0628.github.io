@@ -1,51 +1,45 @@
-# SmartRehab
+# Jose A. Mancera Profile Page
 
-**SmartRehab** is a research project supported by the **Swiss National Science Foundation (SNSF)**, conducted in partnership with the **Swiss Paraplegic Centre (SPZ)** and the **Data Science Lab**.
+This repository contains the GitHub Pages site for Jose A. Mancera. The site is a public professional profile that combines academic background, research interests, selected publications, public code activity, and project context into a single static homepage.
 
----
+## Site highlights
 
-## 🧠 About the Project
+- Professional hero section with portrait, summary, and profile links
+- Education, research interests, and selected experience
+- Interactive Sankey-style career timeline with hover and focus details by year
+- Publications section aligned with the public ORCID record
+- Category-based GitHub heatmap based on public repositories and gists
+- Research ecosystem section that preserves the SmartRehab context
 
-SmartRehab explores the integration of **explainable artificial intelligence (XAI)** into **rehabilitation medicine**, focusing on:
+## Main files
 
-- Developing transparent and interpretable AI models for patient recovery analysis.  
-- Leveraging data-driven methods to personalize rehabilitation programs.  
-- Enhancing collaboration between clinicians, therapists, and AI systems.  
+- `index.html` - the full one-page site, including styles, content, SVG, and interaction logic
+- `jose-mancera-headshot.jpg` - the portrait used in the hero/profile section
+- `2835968c-9b0c-43d7-b596-12b9c6bfeb06.png` - HSLU logo
+- `7c4df955-e75c-4cca-80de-0c9d93106421.png` - Swiss Paraplegic Centre logo
+- `snsf_logo.png` - Swiss National Science Foundation logo
 
-The project aims to make intelligent rehabilitation systems **trustworthy, interpretable, and clinically useful**.
+## Updating the content
 
----
+- Edit `index.html` to update biography, experience, publications, or layout
+- Replace `jose-mancera-headshot.jpg` if you want to use a different portrait
+- Update the publication cards when new ORCID items should be featured
+- Update the GitHub heatmap manually when public repositories or categories change
+- Update the Sankey hover content in the `sankeyDetails` JavaScript object near the bottom of `index.html`
 
-## 🌐 Project Website
+## Local preview
 
-The project website is available at:
+Open `index.html` directly in a browser, or serve the repository with any static file server if you want a closer preview of the deployed GitHub Pages experience.
 
-🔗 **[https://josemancera.datasciencelab.ch](https://josemancera.datasciencelab.ch)**
+## Public sources used for the current profile
 
-The site is hosted via **GitHub Pages**.
+- LinkedIn: `https://www.linkedin.com/in/jose0628/`
+- ORCID: `https://orcid.org/0000-0003-3837-6524`
+- GitHub: `https://github.com/jose0628`
+- HSLU public profile: `https://www.hslu.ch/en/lucerne-school-of-business/about-us/people-finder/person-detail-site/?pid=5892`
 
----
+## Notes
 
-## 🧑‍🤝‍🧑 Partners
-
-- **Data Science Lab** – Research and development lead  
-- **Swiss Paraplegic Centre (SPZ)** – Clinical and rehabilitation partner  
-- **Swiss National Science Foundation (SNSF)** – Funding agency  
-
----
-
-## ⚖️ License
-
-© Data Science Lab. All rights reserved.  
-This work is supported by the **Swiss National Science Foundation (SNSF)** under grant agreement [insert grant number if available].
-
----
-
-## 📬 Contact
-
-For questions or collaborations, please contact:
-
-**Data Science Lab**  
-📧 info@datasciencelab.ch  
-🌐 [https://datasciencelab.ch](https://datasciencelab.ch)
-
+- The Sankey diagram is interactive: hover, focus, or tap a year chip to reveal the detailed milestone summary
+- The code heatmap is qualitative, not a raw GitHub contribution graph
+- Private or organization-only code activity is not represented in the public GitHub section

@@ -541,6 +541,8 @@
     }
 
     .trajectory-panel {
+      display: grid;
+      gap: 1rem;
       padding: 1.4rem;
       border-radius: 1.8rem;
       background:
@@ -562,8 +564,138 @@
       display: block;
     }
 
+    .sankey-target,
+    .sankey-node rect,
+    .sankey-node text,
+    .sankey-flow {
+      transition: opacity 180ms ease, transform 180ms ease, filter 180ms ease;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    .sankey-target.is-muted {
+      opacity: 0.2;
+    }
+
+    .sankey-node.is-active rect,
+    .sankey-node.is-active text {
+      opacity: 1;
+    }
+
+    .sankey-node.is-active rect {
+      transform: translateY(-2px);
+      filter: brightness(1.03) saturate(1.04);
+    }
+
+    .sankey-flow.is-active {
+      opacity: 1;
+      filter: saturate(1.08);
+    }
+
+    .trajectory-interaction {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .trajectory-rail {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .trajectory-rail-label {
+      margin: 0;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .trajectory-years {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .year-trigger {
+      appearance: none;
+      border: 1px solid rgba(15, 35, 48, 0.1);
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--ink);
+      padding: 0.7rem 0.92rem;
+      border-radius: 999px;
+      font: inherit;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(15, 35, 48, 0.06);
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, color 180ms ease;
+    }
+
+    .year-trigger:hover,
+    .year-trigger:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(47, 127, 152, 0.32);
+      outline: none;
+    }
+
+    .year-trigger.is-active {
+      background: linear-gradient(135deg, var(--accent) 0%, #dd8b54 100%);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .trajectory-detail {
+      display: grid;
+      gap: 0.78rem;
+      padding: 1.2rem;
+      border-radius: 1.45rem;
+      background: rgba(15, 35, 48, 0.96);
+      color: #eef5f8;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .trajectory-detail-year {
+      display: inline-flex;
+      width: fit-content;
+      padding: 0.38rem 0.62rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .trajectory-detail h3 {
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .trajectory-detail p {
+      margin: 0;
+      color: rgba(238, 245, 248, 0.82);
+    }
+
+    .trajectory-detail ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: rgba(238, 245, 248, 0.88);
+      display: grid;
+      gap: 0.45rem;
+      font-size: 0.93rem;
+    }
+
+    .trajectory-detail-meta {
+      color: rgba(238, 245, 248, 0.65);
+      font-size: 0.86rem;
+      letter-spacing: 0.02em;
+    }
+
     .trajectory-note {
-      margin: 0.85rem 0 0;
+      margin: 0;
       color: var(--muted);
       font-size: 0.94rem;
     }
@@ -863,7 +995,8 @@
       .collaboration-grid,
       .publication-grid,
       .experience-grid,
-      .logo-panels {
+      .logo-panels,
+      .trajectory-interaction {
         grid-template-columns: 1fr;
       }
 
@@ -1050,7 +1183,7 @@
 
         <div class="trajectory-panel reveal delay-1">
           <div class="sankey-wrap">
-            <svg viewBox="0 0 1200 500" role="img" aria-labelledby="sankey-title sankey-desc">
+            <svg class="sankey-diagram" viewBox="0 0 1200 500" role="img" aria-labelledby="sankey-title sankey-desc">
               <title id="sankey-title">Career evolution timeline for José A. Mancera</title>
               <desc id="sankey-desc">A Sankey-style timeline showing the progression from electronics and communications education through telecom engineering, space and software systems, data science and machine learning, applied AI in industry, lecturing, and doctoral AI research.</desc>
               <defs>
@@ -1073,71 +1206,74 @@
 
               <rect x="0" y="0" width="1200" height="500" rx="26" fill="#f8fbfc"/>
 
-              <path d="M170 325 C220 325, 230 325, 260 325 L360 325 C390 325, 410 304, 440 284 L440 344 C410 364, 390 365, 360 365 L260 365 C230 365, 220 365, 170 365 Z" fill="url(#flowWarm)" opacity="0.95"/>
-              <path d="M170 295 C230 295, 300 210, 390 210 L390 250 C315 250, 245 323, 170 323 Z" fill="url(#flowCool)" opacity="0.8"/>
-              <path d="M530 96 C575 96, 605 122, 650 152 L650 198 C605 168, 575 136, 530 136 Z" fill="url(#flowCool)" opacity="0.78"/>
-              <path d="M560 272 C610 272, 640 272, 680 272 L800 272 C835 272, 860 272, 900 272 L900 340 C860 340, 835 340, 800 340 L680 340 C640 340, 610 340, 560 340 Z" fill="url(#flowDeep)" opacity="0.92"/>
-              <path d="M760 96 C820 96, 860 140, 900 200 L900 238 C855 180, 815 136, 760 136 Z" fill="url(#flowWarm)" opacity="0.74"/>
-              <path d="M990 220 C1040 220, 1065 184, 1095 128 L1095 176 C1065 228, 1040 260, 990 260 Z" fill="url(#flowCool)" opacity="0.88"/>
-              <path d="M990 282 C1042 282, 1067 320, 1095 360 L1095 420 C1065 380, 1040 342, 990 342 Z" fill="url(#flowDeep)" opacity="0.92"/>
+              <path class="sankey-target sankey-flow" data-years="2006 2013" d="M170 325 C220 325, 230 325, 260 325 L360 325 C390 325, 410 304, 440 284 L440 344 C410 364, 390 365, 360 365 L260 365 C230 365, 220 365, 170 365 Z" fill="url(#flowWarm)" opacity="0.95"/>
+              <path class="sankey-target sankey-flow" data-years="2013" d="M170 295 C230 295, 300 210, 390 210 L390 250 C315 250, 245 323, 170 323 Z" fill="url(#flowCool)" opacity="0.8"/>
+              <path class="sankey-target sankey-flow" data-years="2016" d="M530 96 C575 96, 605 122, 650 152 L650 198 C605 168, 575 136, 530 136 Z" fill="url(#flowCool)" opacity="0.78"/>
+              <path class="sankey-target sankey-flow" data-years="2016 2019" d="M560 272 C610 272, 640 272, 680 272 L800 272 C835 272, 860 272, 900 272 L900 340 C860 340, 835 340, 800 340 L680 340 C640 340, 610 340, 560 340 Z" fill="url(#flowDeep)" opacity="0.92"/>
+              <path class="sankey-target sankey-flow" data-years="2019" d="M760 96 C820 96, 860 140, 900 200 L900 238 C855 180, 815 136, 760 136 Z" fill="url(#flowWarm)" opacity="0.74"/>
+              <path class="sankey-target sankey-flow" data-years="2022" d="M990 220 C1040 220, 1065 184, 1095 128 L1095 176 C1065 228, 1040 260, 990 260 Z" fill="url(#flowCool)" opacity="0.88"/>
+              <path class="sankey-target sankey-flow" data-years="2026" d="M990 282 C1042 282, 1067 320, 1095 360 L1095 420 C1065 380, 1040 342, 990 342 Z" fill="url(#flowDeep)" opacity="0.92"/>
 
               <g filter="url(#softShadow)">
-                <rect x="20" y="280" width="150" height="88" rx="18" fill="#173d50"/>
-                <rect x="220" y="280" width="160" height="88" rx="18" fill="#ca6236"/>
-                <rect x="220" y="76" width="160" height="78" rx="18" fill="#2f7f98"/>
-                <rect x="390" y="208" width="170" height="108" rx="18" fill="#e5f0f4"/>
-                <rect x="390" y="56" width="140" height="78" rx="18" fill="#f7e7d8"/>
-                <rect x="590" y="56" width="170" height="78" rx="18" fill="#f3ddd0"/>
-                <rect x="590" y="236" width="170" height="104" rx="18" fill="#d9ecf2"/>
-                <rect x="810" y="214" width="180" height="126" rx="18" fill="#173d50"/>
-                <rect x="1030" y="90" width="150" height="92" rx="18" fill="#2f7f98"/>
-                <rect x="1030" y="332" width="150" height="102" rx="18" fill="#1d4e63"/>
-              </g>
+                <g class="sankey-target sankey-node" data-years="2006">
+                  <rect x="20" y="280" width="150" height="88" rx="18" fill="#173d50"/>
+                  <text x="95" y="316" fill="#ffffff" font-size="16" font-weight="800" text-anchor="middle" font-family="Manrope, sans-serif">B.Sc. ECE</text>
+                  <text x="95" y="344" fill="rgba(255,255,255,0.74)" font-size="12" text-anchor="middle" font-family="Manrope, sans-serif">Engineering base</text>
+                </g>
 
-              <g font-family="Manrope, sans-serif" text-anchor="middle">
-                <text x="95" y="312" fill="#ffffff" font-size="14" font-weight="800">B.Sc. Electronics</text>
-                <text x="95" y="330" fill="#ffffff" font-size="14" font-weight="800">&amp; Communications</text>
-                <text x="95" y="350" fill="rgba(255,255,255,0.74)" font-size="12">Engineering foundation</text>
+                <g class="sankey-target sankey-node" data-years="2006 2013">
+                  <rect x="220" y="280" width="160" height="88" rx="18" fill="#ca6236"/>
+                  <text x="300" y="316" fill="#ffffff" font-size="16" font-weight="800" text-anchor="middle" font-family="Manrope, sans-serif">Telecom</text>
+                  <text x="300" y="344" fill="rgba(255,255,255,0.74)" font-size="12" text-anchor="middle" font-family="Manrope, sans-serif">Huawei + Nortel</text>
+                </g>
 
-                <text x="300" y="312" fill="#ffffff" font-size="14" font-weight="800">Telecom Engineer</text>
-                <text x="300" y="330" fill="#ffffff" font-size="14" font-weight="800">Huawei + Nortel</text>
-                <text x="300" y="350" fill="rgba(255,255,255,0.74)" font-size="12">2006 to 2013</text>
+                <g class="sankey-target sankey-node" data-years="2013">
+                  <rect x="220" y="76" width="160" height="78" rx="18" fill="#2f7f98"/>
+                  <text x="300" y="108" fill="#ffffff" font-size="16" font-weight="800" text-anchor="middle" font-family="Manrope, sans-serif">Mobile + Sat</text>
+                  <text x="300" y="132" fill="rgba(255,255,255,0.74)" font-size="12" text-anchor="middle" font-family="Manrope, sans-serif">Specializations</text>
+                </g>
 
-                <text x="300" y="104" fill="#ffffff" font-size="14" font-weight="800">Mobile Devices</text>
-                <text x="300" y="122" fill="#ffffff" font-size="14" font-weight="800">Satellite Tech</text>
-                <text x="300" y="140" fill="rgba(255,255,255,0.74)" font-size="12">Specialization layer</text>
+                <g class="sankey-target sankey-node" data-years="2013">
+                  <rect x="390" y="208" width="170" height="108" rx="18" fill="#e5f0f4"/>
+                  <text x="475" y="248" fill="#173d50" font-size="16" font-weight="800" text-anchor="middle" font-family="Manrope, sans-serif">Space Systems</text>
+                  <text x="475" y="276" fill="#5a6973" font-size="12" text-anchor="middle" font-family="Manrope, sans-serif">Swiss Space + ELCA</text>
+                </g>
 
-                <text x="475" y="236" fill="#173d50" font-size="15" font-weight="800">Space + Software Systems</text>
-                <text x="475" y="258" fill="#173d50" font-size="13" font-weight="700">Swiss Space Center, ELCA,</text>
-                <text x="475" y="276" fill="#173d50" font-size="13" font-weight="700">Swiss Space Systems, Schindler</text>
-                <text x="475" y="300" fill="#5a6973" font-size="12">2013 to 2017</text>
+                <g class="sankey-target sankey-node" data-years="2016">
+                  <rect x="390" y="56" width="140" height="78" rx="18" fill="#f7e7d8"/>
+                  <text x="460" y="88" fill="#a74d26" font-size="16" font-weight="800" text-anchor="middle" font-family="Manrope, sans-serif">M.Sc. CS</text>
+                  <text x="460" y="112" fill="#5a6973" font-size="12" text-anchor="middle" font-family="Manrope, sans-serif">Bern</text>
+                </g>
 
-                <text x="460" y="88" fill="#a74d26" font-size="14" font-weight="800">M.Sc.</text>
-                <text x="460" y="106" fill="#a74d26" font-size="14" font-weight="800">Computer Science</text>
-                <text x="460" y="124" fill="#5a6973" font-size="12">University of Bern</text>
+                <g class="sankey-target sankey-node" data-years="2016">
+                  <rect x="590" y="56" width="170" height="78" rx="18" fill="#f3ddd0"/>
+                  <text x="675" y="88" fill="#a74d26" font-size="16" font-weight="800" text-anchor="middle" font-family="Manrope, sans-serif">M.A. IM</text>
+                  <text x="675" y="112" fill="#5a6973" font-size="12" text-anchor="middle" font-family="Manrope, sans-serif">Fribourg</text>
+                </g>
 
-                <text x="675" y="88" fill="#a74d26" font-size="14" font-weight="800">M.A.</text>
-                <text x="675" y="106" fill="#a74d26" font-size="14" font-weight="800">Information Management</text>
-                <text x="675" y="124" fill="#5a6973" font-size="12">University of Fribourg</text>
+                <g class="sankey-target sankey-node" data-years="2016 2019">
+                  <rect x="590" y="236" width="170" height="104" rx="18" fill="#d9ecf2"/>
+                  <text x="675" y="274" fill="#173d50" font-size="16" font-weight="800" text-anchor="middle" font-family="Manrope, sans-serif">Data Science</text>
+                  <text x="675" y="300" fill="#5a6973" font-size="12" text-anchor="middle" font-family="Manrope, sans-serif">ML + product systems</text>
+                </g>
 
-                <text x="675" y="270" fill="#173d50" font-size="15" font-weight="800">Data Science + ML</text>
-                <text x="675" y="292" fill="#173d50" font-size="13" font-weight="700">Fribourg research group,</text>
-                <text x="675" y="310" fill="#173d50" font-size="13" font-weight="700">CreditGate24, ML systems</text>
-                <text x="675" y="332" fill="#5a6973" font-size="12">2016 to 2018</text>
+                <g class="sankey-target sankey-node" data-years="2019 2022 2026">
+                  <rect x="810" y="214" width="180" height="126" rx="18" fill="#173d50"/>
+                  <text x="900" y="258" fill="#ffffff" font-size="17" font-weight="800" text-anchor="middle" font-family="Manrope, sans-serif">Applied AI</text>
+                  <text x="900" y="286" fill="rgba(255,255,255,0.8)" font-size="12" text-anchor="middle" font-family="Manrope, sans-serif">Beekeeper AG</text>
+                </g>
 
-                <text x="900" y="250" fill="#ffffff" font-size="16" font-weight="800">Applied AI in Industry</text>
-                <text x="900" y="272" fill="#ffffff" font-size="13" font-weight="700">Beekeeper AG</text>
-                <text x="900" y="290" fill="rgba(255,255,255,0.8)" font-size="12">data science research,</text>
-                <text x="900" y="306" fill="rgba(255,255,255,0.8)" font-size="12">GDPR-compliant systems,</text>
-                <text x="900" y="322" fill="rgba(255,255,255,0.8)" font-size="12">recommenders, AI products</text>
+                <g class="sankey-target sankey-node" data-years="2022">
+                  <rect x="1030" y="90" width="150" height="92" rx="18" fill="#2f7f98"/>
+                  <text x="1105" y="126" fill="#ffffff" font-size="16" font-weight="800" text-anchor="middle" font-family="Manrope, sans-serif">Lecturing</text>
+                  <text x="1105" y="150" fill="rgba(255,255,255,0.78)" font-size="12" text-anchor="middle" font-family="Manrope, sans-serif">HSLU</text>
+                </g>
 
-                <text x="1105" y="122" fill="#ffffff" font-size="15" font-weight="800">Lecturer</text>
-                <text x="1105" y="142" fill="#ffffff" font-size="14" font-weight="800">HSLU</text>
-                <text x="1105" y="160" fill="rgba(255,255,255,0.78)" font-size="12">from 2022</text>
-
-                <text x="1105" y="366" fill="#ffffff" font-size="15" font-weight="800">PhD + AI Research</text>
-                <text x="1105" y="386" fill="#ffffff" font-size="14" font-weight="800">University of Fribourg</text>
-                <text x="1105" y="406" fill="rgba(255,255,255,0.78)" font-size="12">ongoing doctoral work</text>
+                <g class="sankey-target sankey-node" data-years="2026">
+                  <rect x="1030" y="332" width="150" height="102" rx="18" fill="#1d4e63"/>
+                  <text x="1105" y="372" fill="#ffffff" font-size="16" font-weight="800" text-anchor="middle" font-family="Manrope, sans-serif">PhD Research</text>
+                  <text x="1105" y="398" fill="rgba(255,255,255,0.78)" font-size="12" text-anchor="middle" font-family="Manrope, sans-serif">Fribourg AI</text>
+                </g>
               </g>
 
               <g font-family="Manrope, sans-serif" fill="#5a6973" font-size="12" font-weight="700">
@@ -1150,7 +1286,32 @@
               </g>
             </svg>
           </div>
-          <p class="trajectory-note">Timeline synthesis based on public education and work history. The bands show how engineering foundations, additional specializations, and graduate studies converge into applied AI research, teaching, and doctoral work.</p>
+          <div class="trajectory-interaction">
+            <div class="trajectory-rail">
+              <p class="trajectory-rail-label">Hover, focus, or tap a year</p>
+              <div class="trajectory-years" role="toolbar" aria-label="Career timeline years">
+                <button class="year-trigger" type="button" data-year="2006">2006</button>
+                <button class="year-trigger" type="button" data-year="2013">2013</button>
+                <button class="year-trigger" type="button" data-year="2016">2016</button>
+                <button class="year-trigger" type="button" data-year="2019">2019</button>
+                <button class="year-trigger" type="button" data-year="2022">2022</button>
+                <button class="year-trigger is-active" type="button" data-year="2026">2026</button>
+              </div>
+              <p class="trajectory-note">Timeline synthesis based on public education and work history. The boxes are intentionally short; the richer context appears in the interactive detail card.</p>
+            </div>
+
+            <article class="trajectory-detail" aria-live="polite">
+              <span class="trajectory-detail-year" id="trajectory-detail-year">2026</span>
+              <h3 id="trajectory-detail-title">Current AI research and public profile</h3>
+              <p id="trajectory-detail-summary">The present stage combines applied AI product work, teaching, and ongoing doctoral research.</p>
+              <ul id="trajectory-detail-list">
+                <li>PhD candidate in Computer Science and Artificial Intelligence at the University of Fribourg</li>
+                <li>Health AI and digital ethics publications appear in the recent ORCID record</li>
+                <li>Public profile now centers on research, teaching, and explainable AI</li>
+              </ul>
+              <p class="trajectory-detail-meta" id="trajectory-detail-meta">Current focus: doctoral research, applied AI, health AI, digital ethics, and explainable systems.</p>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -1423,5 +1584,116 @@
       </div>
     </footer>
   </div>
+  <script>
+    (() => {
+      const sankeyDetails = {
+        "2006": {
+          title: "Engineering foundation and telecom entry",
+          summary: "The profile starts with a B.Sc. in Electronics and Communications and moves directly into telecom engineering delivery.",
+          meta: "Focus: systems thinking, communications infrastructure, and engineering fundamentals.",
+          points: [
+            "B.Sc. in Electronics and Communications at Tecnologico de Monterrey",
+            "Telecom Engineer Solutions role at Huawei in Mexico City",
+            "Strong base in networked systems, signal-oriented thinking, and technical delivery"
+          ]
+        },
+        "2013": {
+          title: "Specialization and the move into Swiss systems work",
+          summary: "This period connects telecom maturity with additional specialization in mobile devices and satellite technology, then shifts into Swiss space and software engineering.",
+          meta: "Focus: telecom depth, mobile and satellite specialization, and systems engineering in Switzerland.",
+          points: [
+            "Senior Telecommunications Engineer at Nortel Networks in Montreal",
+            "Additional tracks in mobile devices, information technology, satellite technology, and signal processing",
+            "Transition into Swiss Space Center, ELCA, and Swiss Space Systems"
+          ]
+        },
+        "2016": {
+          title: "Graduate study and the data science pivot",
+          summary: "Graduate education and early machine learning roles compress the move from systems engineering into data science and research-driven product work.",
+          meta: "Focus: M.Sc. Computer Science, M.A. Information Management, data science, and machine learning.",
+          points: [
+            "M.Sc. in Computer Science from the University of Bern",
+            "M.A. in Information Management from the University of Fribourg",
+            "Data Scientist at Schindler and Senior Big Data Machine Learning Scientist in Fribourg"
+          ]
+        },
+        "2019": {
+          title: "Applied AI in industry",
+          summary: "The Beekeeper phase anchors the profile in privacy-aware applied AI, recommender systems, and data-driven product research.",
+          meta: "Focus: user characterization, GDPR-compliant systems, recommendation, and applied AI product work.",
+          points: [
+            "Applied Data Science Researcher at Beekeeper AG in Zurich",
+            "Industry work linked to privacy-aware graph and recommender research",
+            "Public code and publication signals increasingly align with production AI systems"
+          ]
+        },
+        "2022": {
+          title: "Teaching and knowledge transfer",
+          summary: "The profile expands from applied research into teaching, with public courses and academic delivery at HSLU.",
+          meta: "Focus: lecturing, data systems, AI pedagogy, and public knowledge transfer.",
+          points: [
+            "Lecturer at Lucerne University of Applied Sciences and Arts",
+            "Teaching areas include AI, search and optimization, data systems, and visualization",
+            "The public profile shows stronger educational material and tutorial-style code artifacts"
+          ]
+        },
+        "2026": {
+          title: "Current AI research and public profile",
+          summary: "The present stage combines applied AI product work, teaching, and ongoing doctoral research in explainable and responsible AI.",
+          meta: "Current focus: doctoral research, applied AI, health AI, digital ethics, and explainable systems.",
+          points: [
+            "PhD candidate in Computer Science and Artificial Intelligence at the University of Fribourg",
+            "Recent ORCID outputs include health AI and digital ethics publications from 2025",
+            "The homepage now frames the full trajectory from engineering to AI research"
+          ]
+        }
+      };
+
+      const buttons = Array.from(document.querySelectorAll(".year-trigger"));
+      const targets = Array.from(document.querySelectorAll(".sankey-target"));
+      const yearEl = document.getElementById("trajectory-detail-year");
+      const titleEl = document.getElementById("trajectory-detail-title");
+      const summaryEl = document.getElementById("trajectory-detail-summary");
+      const listEl = document.getElementById("trajectory-detail-list");
+      const metaEl = document.getElementById("trajectory-detail-meta");
+
+      if (!buttons.length || !yearEl || !titleEl || !summaryEl || !listEl || !metaEl) {
+        return;
+      }
+
+      const setYear = (year) => {
+        const detail = sankeyDetails[year];
+        if (!detail) return;
+
+        yearEl.textContent = year;
+        titleEl.textContent = detail.title;
+        summaryEl.textContent = detail.summary;
+        metaEl.textContent = detail.meta;
+        listEl.innerHTML = detail.points.map((point) => `<li>${point}</li>`).join("");
+
+        buttons.forEach((button) => {
+          const isActive = button.dataset.year === year;
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-pressed", isActive ? "true" : "false");
+        });
+
+        targets.forEach((target) => {
+          const years = (target.dataset.years || "").split(/\s+/).filter(Boolean);
+          const isActive = years.includes(year);
+          target.classList.toggle("is-active", isActive);
+          target.classList.toggle("is-muted", !isActive);
+        });
+      };
+
+      buttons.forEach((button) => {
+        const activate = () => setYear(button.dataset.year);
+        button.addEventListener("pointerenter", activate);
+        button.addEventListener("focus", activate);
+        button.addEventListener("click", activate);
+      });
+
+      setYear(buttons.find((button) => button.classList.contains("is-active"))?.dataset.year || buttons[0].dataset.year);
+    })();
+  </script>
 </body>
 </html>
