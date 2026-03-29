@@ -219,13 +219,12 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      grid-template-columns: 1fr;
       gap: 1.5rem;
       align-items: stretch;
     }
 
-    .hero-copy,
-    .hero-card {
+    .hero-copy {
       border-radius: var(--radius);
       border: 1px solid rgba(15, 35, 48, 0.08);
       box-shadow: var(--shadow);
@@ -249,6 +248,37 @@
       height: 11rem;
       border-radius: 50%;
       background: radial-gradient(circle, rgba(47, 127, 152, 0.18), transparent 70%);
+    }
+
+    .hero-heading-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 220px;
+      gap: 1.4rem;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-heading-copy {
+      min-width: 0;
+    }
+
+    .hero-portrait-inline {
+      justify-self: end;
+      width: min(100%, 220px);
+      padding: 0.55rem;
+      border-radius: 1.5rem;
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(15, 35, 48, 0.08);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-portrait-inline img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 1.1rem;
     }
 
     .eyebrow {
@@ -388,57 +418,6 @@
       font-size: 0.9rem;
     }
 
-    .hero-card {
-      background:
-        linear-gradient(180deg, rgba(15, 35, 48, 0.98), rgba(15, 35, 48, 0.9)),
-        linear-gradient(140deg, rgba(47, 127, 152, 0.65), rgba(202, 98, 54, 0.5));
-      color: #eef5f8;
-      display: grid;
-      grid-template-rows: auto 1fr;
-    }
-
-    .hero-card img {
-      width: 100%;
-      max-height: 440px;
-      object-fit: cover;
-      object-position: center top;
-    }
-
-    .profile-copy {
-      padding: 1.4rem 1.4rem 1.5rem;
-      display: grid;
-      gap: 1rem;
-    }
-
-    .profile-copy h2 {
-      font-size: 1.35rem;
-      font-family: var(--serif);
-      letter-spacing: -0.03em;
-    }
-
-    .profile-copy p {
-      margin: 0;
-      color: rgba(238, 245, 248, 0.84);
-    }
-
-    .role-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
-    }
-
-    .role-stack span {
-      display: inline-flex;
-      padding: 0.5rem 0.72rem;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-
     main section {
       padding: 1.5rem 0 0;
     }
@@ -465,13 +444,7 @@
       font-family: var(--serif);
       font-size: clamp(2rem, 4vw, 3rem);
       letter-spacing: -0.04em;
-      max-width: 12ch;
-    }
-
-    .section-text {
-      max-width: 58ch;
-      color: var(--muted);
-      margin: 0;
+      max-width: none;
     }
 
     .grid-2 {
@@ -1000,8 +973,8 @@
         grid-template-columns: 1fr;
       }
 
-      .hero-card img {
-        max-height: 560px;
+      .hero-heading-row {
+        grid-template-columns: minmax(0, 1fr) 200px;
       }
     }
 
@@ -1021,6 +994,15 @@
 
       .hero h1 {
         max-width: none;
+      }
+
+      .hero-heading-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-portrait-inline {
+        justify-self: start;
+        width: min(100%, 220px);
       }
 
       .metrics {
@@ -1059,9 +1041,16 @@
       <section class="hero" id="top">
         <div class="hero-grid">
           <div class="hero-copy reveal">
-            <span class="eyebrow">Professional Profile</span>
-            <h1>From telecom systems to explainable AI research.</h1>
-            <p class="subtitle">Applied data science researcher at Beekeeper AG, lecturer at Lucerne University of Applied Sciences and Arts, and PhD candidate in Computer Science and Artificial Intelligence at the University of Fribourg.</p>
+            <div class="hero-heading-row">
+              <div class="hero-heading-copy">
+                <span class="eyebrow">Professional Profile</span>
+                <h1>AI Researcher</h1>
+                <p class="subtitle">Applied data science researcher at Beekeeper AG, lecturer at Lucerne University of Applied Sciences and Arts, and PhD candidate in Computer Science and Artificial Intelligence at the University of Fribourg.</p>
+              </div>
+              <div class="hero-portrait-inline">
+                <img src="jose-mancera-headshot.jpg" alt="Portrait of José A. Mancera">
+              </div>
+            </div>
             <p class="intro">José A. Mancera works across industry and academia, building a career that moves from electronics and communications engineering into software systems, machine learning, recommender systems, explainable AI, digital ethics, and Generative AI. His public work shows a consistent throughline: translating complex technical systems into practical decision-support tools.</p>
 
             <div class="chip-row" aria-label="Research and role highlights">
@@ -1095,22 +1084,6 @@
               </div>
             </div>
           </div>
-
-          <aside class="hero-card reveal delay-1" aria-labelledby="profile-photo-title">
-            <img src="jose-mancera-headshot.jpg" alt="Portrait of José A. Mancera">
-            <div class="profile-copy">
-              <div>
-                <h2 id="profile-photo-title">Profile photo and description</h2>
-                <p>Public professional portrait paired with a concise overview for recruiters, collaborators, and research partners.</p>
-              </div>
-              <div class="role-stack" aria-label="Current positions">
-                <span>Beekeeper AG</span>
-                <span>HSLU Lecturer</span>
-                <span>University of Fribourg</span>
-              </div>
-              <p>Current focus areas include recommender systems, fuzzy mathematics, explainable AI, Generative AI, and responsible digital decision-making.</p>
-            </div>
-          </aside>
         </div>
       </section>
 
@@ -1118,9 +1091,8 @@
         <div class="section-header">
           <div>
             <span class="section-kicker">Academic + Applied</span>
-            <h2 class="section-title">A cross-sector profile shaped by systems thinking.</h2>
+            <h2 class="section-title">Education &amp; Research Interests</h2>
           </div>
-          <p class="section-text">Public information from HSLU, ORCID, and GitHub shows a professional trajectory built across telecom, aerospace, software engineering, machine learning, teaching, and AI research in Switzerland, Canada, Mexico, and Europe.</p>
         </div>
 
         <div class="grid-2">
@@ -1176,9 +1148,8 @@
         <div class="section-header">
           <div>
             <span class="section-kicker">Career Trajectory</span>
-            <h2 class="section-title">A Sankey-style timeline of the move from engineering foundations to AI research.</h2>
+            <h2 class="section-title">Electronics Engineer to AI Researcher</h2>
           </div>
-          <p class="section-text">This diagram summarizes the evolution from electronics and communications engineering into telecom, space systems, software engineering, data science, applied AI, teaching, and doctoral research.</p>
         </div>
 
         <div class="trajectory-panel reveal delay-1">
@@ -1319,9 +1290,8 @@
         <div class="section-header">
           <div>
             <span class="section-kicker">Experience Snapshot</span>
-            <h2 class="section-title">Selected roles across telecom, space systems, software, and AI.</h2>
+            <h2 class="section-title">Professional Roles in Career Path</h2>
           </div>
-          <p class="section-text">The roles below reflect the public HSLU profile and emphasize the progressive move from communications infrastructure toward modern applied AI.</p>
         </div>
 
         <div class="experience-grid">
@@ -1362,9 +1332,8 @@
         <div class="section-header">
           <div>
             <span class="section-kicker">Selected Publications</span>
-            <h2 class="section-title">Recent public research drawn from the ORCID record.</h2>
+            <h2 class="section-title">Top Publications</h2>
           </div>
-          <p class="section-text">A selected view of public journal and conference outputs across health AI, digital ethics, civic data, recommender systems, and privacy-aware machine learning.</p>
         </div>
 
         <div class="publication-grid">
@@ -1434,9 +1403,8 @@
         <div class="section-header">
           <div>
             <span class="section-kicker">Public Code Footprint</span>
-            <h2 class="section-title">A category heatmap based on public GitHub repositories and gists.</h2>
+            <h2 class="section-title">GitHub Activity</h2>
           </div>
-          <p class="section-text">This view is intentionally category-based rather than commit-based. It reflects public projects and public gists only, so private and organization activity are not represented here.</p>
         </div>
 
         <div class="heat-panel">
@@ -1536,9 +1504,8 @@
         <div class="section-header">
           <div>
             <span class="section-kicker">Research Ecosystem</span>
-            <h2 class="section-title">Current academic and project context.</h2>
+            <h2 class="section-title">Academic Projects &amp; Activities</h2>
           </div>
-          <p class="section-text">The existing site already referenced the SmartRehab collaboration, so this redesign keeps that context and reframes it as part of the broader professional profile.</p>
         </div>
 
         <div class="collaboration-grid">
