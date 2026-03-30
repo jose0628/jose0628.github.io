@@ -1,13 +1,13 @@
 # Jose A. Mancera Profile Page
 
-This repository contains the GitHub Pages site for Jose A. Mancera. The site is a public professional profile that combines academic background, research interests, selected publications, public code activity, and project context into a single static homepage.
+This repository contains the GitHub Pages site for Jose A. Mancera. The site is a public professional profile that combines academic background, research interests, public ORCID publications, public code activity, and project context into a single static homepage.
 
 ## Site highlights
 
 - Professional hero section with portrait, summary, and profile links
 - Education, research interests, and selected experience
-- Interactive Sankey-style career timeline with hover and focus details by year
-- Publications section aligned with the public ORCID record
+- Interactive dark-theme career timeline with one continuous Sankey and a year selection bar that scrolls to each milestone
+- Publications section aligned with the full public ORCID record and grouped by category
 - Category-based GitHub heatmap based on public repositories and gists
 - Research ecosystem section that preserves the SmartRehab context
 
@@ -23,9 +23,10 @@ This repository contains the GitHub Pages site for Jose A. Mancera. The site is 
 
 - Edit `index.html` to update biography, experience, publications, or layout
 - Replace `jose-mancera-headshot.jpg` if you want to use a different portrait
-- Update the publication cards when new ORCID items should be featured
+- Update the publication catalog when new ORCID items should be included
 - Update the GitHub heatmap manually when public repositories or categories change
-- Update the Sankey hover content in the `sankeyDetails` JavaScript object near the bottom of `index.html`
+- Update the career timeline summaries in `trajectoryCatalog` and the shared graph layout in `trajectoryGraph` near the bottom of `index.html`
+- Update the grouped publication data in the `publicationCatalog` JavaScript object near the bottom of `index.html`
 
 ## Local preview
 
@@ -40,6 +41,7 @@ Open `index.html` directly in a browser, or serve the repository with any static
 
 ## Notes
 
-- The Sankey diagram is interactive: hover, focus, or tap a year chip to reveal the detailed milestone summary
+- The Sankey diagram is interactive: select a year in the top bar to scroll the continuous timeline to that milestone, or scroll the chart horizontally to move through the path
+- All public ORCID works currently shown on the page are grouped into topic categories
 - The code heatmap is qualitative, not a raw GitHub contribution graph
 - Private or organization-only code activity is not represented in the public GitHub section
