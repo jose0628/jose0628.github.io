@@ -392,7 +392,7 @@
 
     .metrics {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 0.9rem;
       position: relative;
       z-index: 1;
@@ -997,6 +997,10 @@
       .hero-heading-row {
         grid-template-columns: minmax(0, 1fr) 200px;
       }
+
+      .metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 760px) {
@@ -1111,7 +1115,11 @@
               </div>
               <div class="metric">
                 <strong>19</strong>
-                <span>Public repositories visible on GitHub as of March 29, 2026</span>
+                <span>Public repositories visible on GitHub as of March 30, 2026</span>
+              </div>
+              <div class="metric">
+                <strong>18</strong>
+                <span>Publications listed on Google Scholar as of March 30, 2026</span>
               </div>
               <div class="metric">
                 <strong>2006 → 2026</strong>
@@ -1424,7 +1432,7 @@
           <a href="https://github.com/jose0628" target="_blank" rel="noreferrer">GitHub</a>
           <a href="https://www.hslu.ch/en/lucerne-school-of-business/about-us/people-finder/person-detail-site/?pid=5892" target="_blank" rel="noreferrer">HSLU profile</a>
         </div>
-        <p class="footer-note">This page is a curated professional profile assembled from public sources. The biography and education details are aligned to the public HSLU profile, the publication section reflects the public ORCID works feed reviewed on March 30, 2026, and the code heatmap is a qualitative synthesis of public GitHub repositories and gists.</p>
+        <p class="footer-note">This page is a curated professional profile assembled from public sources. The biography and education details are aligned to the public HSLU profile, the publication section reflects the public ORCID works feed reviewed on March 30, 2026, the headline publication count reflects the public Google Scholar profile reviewed on March 30, 2026, and the code heatmap is a qualitative synthesis of public GitHub repositories and gists.</p>
       </div>
     </footer>
   </div>
@@ -1569,7 +1577,7 @@
       // One wide graph supports button-driven horizontal navigation across the full career path.
       const trajectoryGraph = {
         width: 3740,
-        height: 430,
+        height: 470,
         years: [
           { year: "2006", guideX: 88, labelX: 88, focusX: 300, bandX: 24, bandWidth: 610 },
           { year: "2013", guideX: 780, labelX: 780, focusX: 930, bandX: 710, bandWidth: 430 },
@@ -1581,24 +1589,24 @@
         nodes: [
           { id: "electronics", x: 70, y: 210, h: 122, color: "#45a9ff", label: "Electronics", sub: "B.Sc. ECE", years: ["2006"] },
           { id: "telecom", x: 300, y: 210, h: 122, color: "#45a9ff", label: "Telecom", sub: "Huawei + Nortel", years: ["2006", "2013"] },
-          { id: "systems", x: 540, y: 210, h: 122, color: "#efbc62", label: "Systems", sub: "Network base", years: ["2006"] },
+          { id: "systems", x: 540, y: 210, h: 122, color: "#efbc62", label: "Systems", sub: "Network base", labelPosition: "below", years: ["2006"] },
           { id: "specialization", x: 780, y: 92, h: 74, color: "#6dd6d1", label: "Mobile + Sat", sub: "Specialization", years: ["2013"] },
           { id: "space", x: 780, y: 230, h: 108, color: "#45a9ff", label: "Space Sys", sub: "Swiss Space", years: ["2013"] },
           { id: "software", x: 1030, y: 188, h: 112, color: "#efbc62", label: "Software", sub: "ELCA + S3", years: ["2013"] },
           { id: "msc", x: 1280, y: 92, h: 78, color: "#ff7e5f", label: "M.Sc. CS", sub: "Bern", years: ["2016"] },
-          { id: "ma", x: 1280, y: 258, h: 78, color: "#6dd6d1", label: "M.A. IM", sub: "Fribourg", years: ["2016"] },
+          { id: "ma", x: 1280, y: 258, h: 78, color: "#6dd6d1", label: "M.A. IM", sub: "Fribourg", labelPosition: "below", years: ["2016"] },
           { id: "data", x: 1520, y: 180, h: 142, color: "#45a9ff", label: "Data Sci", sub: "Schindler", years: ["2016", "2019"] },
           { id: "ml", x: 1770, y: 180, h: 142, color: "#efbc62", label: "ML Research", sub: "Fribourg", years: ["2016", "2019"] },
           { id: "beekeeper", x: 2020, y: 180, h: 126, color: "#45a9ff", label: "Beekeeper", sub: "Applied AI", years: ["2019", "2022", "2026"] },
           { id: "privacy", x: 2270, y: 90, h: 88, color: "#6dd6d1", label: "Privacy AI", sub: "GDPR", years: ["2019", "2026"] },
-          { id: "recs", x: 2270, y: 252, h: 88, color: "#efbc62", label: "Recs", sub: "Product intel", years: ["2019"] },
+          { id: "recs", x: 2270, y: 252, h: 88, color: "#efbc62", label: "Recs", sub: "Product intel", labelPosition: "below", years: ["2019"] },
           { id: "hslu", x: 2520, y: 180, h: 126, color: "#45a9ff", label: "HSLU", sub: "Lecturer", years: ["2022", "2026"] },
           { id: "teaching", x: 2770, y: 92, h: 88, color: "#6dd6d1", label: "Teaching", sub: "AI + Search", years: ["2022", "2026"] },
-          { id: "dataSystems", x: 2770, y: 252, h: 88, color: "#efbc62", label: "Data Systems", sub: "Viz + Eng", years: ["2022"] },
+          { id: "dataSystems", x: 2770, y: 252, h: 88, color: "#efbc62", label: "Data Systems", sub: "Viz + Eng", labelPosition: "below", years: ["2022"] },
           { id: "phd", x: 3020, y: 180, h: 128, color: "#45a9ff", label: "PhD", sub: "Fribourg AI", years: ["2026"] },
           { id: "health", x: 3270, y: 74, h: 84, color: "#6dd6d1", label: "Health AI", sub: "PLOS One", years: ["2026"] },
           { id: "ethics", x: 3270, y: 186, h: 84, color: "#efbc62", label: "Ethics", sub: "DGO", years: ["2026"] },
-          { id: "civic", x: 3270, y: 298, h: 84, color: "#ff7e5f", label: "Civic AI", sub: "ICEDEG", years: ["2026"] },
+          { id: "civic", x: 3270, y: 298, h: 84, color: "#ff7e5f", label: "Civic AI", sub: "ICEDEG", labelPosition: "below", years: ["2026"] },
           { id: "profile", x: 3520, y: 186, h: 116, color: "#efbc62", label: "AI Researcher", sub: "Current role", years: ["2026"] }
         ],
         links: [
@@ -1787,14 +1795,14 @@
           const active = entry.year === year;
           return `
             <g>
-              <line x1="${entry.guideX}" y1="54" x2="${entry.guideX}" y2="${trajectoryGraph.height - 34}" stroke="${active ? "rgba(131, 191, 255, 0.28)" : "rgba(255, 255, 255, 0.08)"}" stroke-width="1" stroke-dasharray="6 10"/>
+              <line x1="${entry.guideX}" y1="54" x2="${entry.guideX}" y2="${trajectoryGraph.height - 40}" stroke="${active ? "rgba(131, 191, 255, 0.28)" : "rgba(255, 255, 255, 0.08)"}" stroke-width="1" stroke-dasharray="6 10"/>
               <text x="${entry.labelX}" y="34" fill="${active ? "#f4f7f9" : "rgba(223, 232, 238, 0.56)"}" font-size="16" font-weight="${active ? "800" : "700"}" text-anchor="middle" font-family="Manrope, sans-serif">${entry.year}</text>
             </g>
           `;
         }).join("");
 
         const focusBandMarkup = `
-          <rect x="${milestone.bandX}" y="56" width="${milestone.bandWidth}" height="${trajectoryGraph.height - 106}" rx="28" fill="rgba(67, 127, 186, 0.1)" stroke="rgba(131, 191, 255, 0.14)"/>
+          <rect x="${milestone.bandX}" y="56" width="${milestone.bandWidth}" height="${trajectoryGraph.height - 126}" rx="28" fill="rgba(67, 127, 186, 0.1)" stroke="rgba(131, 191, 255, 0.14)"/>
         `;
 
         const linksMarkup = trajectoryGraph.links.map((link) => {
@@ -1812,10 +1820,19 @@
           const active = includesYear(node, year);
           const width = node.w || 18;
           const centerX = node.x + width / 2;
+          const labelPosition = node.labelPosition || "above";
+          const labelX = labelPosition === "left"
+            ? node.x - 16
+            : labelPosition === "right"
+              ? node.x + width + 16
+              : centerX;
+          const labelY = labelPosition === "below" ? node.y + node.h + 30 : node.y - 26;
+          const subY = labelPosition === "below" ? labelY + 19 : node.y - 7;
+          const textAnchor = labelPosition === "left" ? "end" : labelPosition === "right" ? "start" : "middle";
           return `
             <g opacity="${active ? 1 : 0.28}">
-              <text x="${centerX}" y="${node.y - 26}" fill="${active ? "#f1f5f7" : "rgba(241, 245, 247, 0.42)"}" font-size="15" font-weight="700" text-anchor="middle" font-family="Manrope, sans-serif">${escapeHtml(node.label)}</text>
-              <text x="${centerX}" y="${node.y - 7}" fill="${active ? "rgba(223, 232, 238, 0.72)" : "rgba(223, 232, 238, 0.32)"}" font-size="11" text-anchor="middle" font-family="Manrope, sans-serif">${escapeHtml(node.sub)}</text>
+              <text x="${labelX}" y="${labelY}" fill="${active ? "#f1f5f7" : "rgba(241, 245, 247, 0.42)"}" font-size="15" font-weight="700" text-anchor="${textAnchor}" font-family="Manrope, sans-serif">${escapeHtml(node.label)}</text>
+              <text x="${labelX}" y="${subY}" fill="${active ? "rgba(223, 232, 238, 0.72)" : "rgba(223, 232, 238, 0.32)"}" font-size="11" text-anchor="${textAnchor}" font-family="Manrope, sans-serif">${escapeHtml(node.sub)}</text>
               <rect x="${node.x}" y="${node.y}" width="${width}" height="${node.h}" rx="4" fill="${node.color}"${active ? ' filter="url(#trajectory-node-glow)"' : ""}/>
             </g>
           `;
