@@ -1,14 +1,18 @@
-# Jose A. Mancera Profile Page
+# Dr. José A. Mancera Profile Page
 
-This repository contains the GitHub Pages site for Jose A. Mancera. The site is a public professional profile that combines academic background, research interests, public ORCID publications, public code activity, and project context into a single static homepage.
+Live site: **https://josemancera.datasciencelab.ch** (GitHub Pages, custom domain set in `CNAME`)
+
+This repository contains the GitHub Pages site for Dr. José A. Mancera. The site is a public professional profile that combines academic background, research interests, public ORCID publications, public code activity, and project context into a single static homepage.
 
 ## Site highlights
 
-- Professional hero section with portrait, summary, and profile links
-- Education, research interests, and selected experience
-- Interactive dark-theme career timeline with one continuous Sankey and a year selection bar that scrolls to each milestone
-- Publications section aligned with the full public ORCID record and grouped by category
-- Category-based GitHub heatmap based on public repositories and gists
+- Editorial, warm-neutral design (Source Serif 4 + Inter) with automatic and manual light/dark mode
+- Hero section with portrait, summary, and profile links
+- Doctoral research feature for the completed PhD (thesis, framework pipeline, links)
+- Education, research interests, and an experience timeline
+- Interactive career Sankey with a year selector that scrolls to each milestone
+- Publications list aligned with the full public ORCID record, filterable by theme
+- Recently active GitHub repositories plus a theme-by-year heatmap of public repositories and gists
 - Research ecosystem section that preserves the SmartRehab context
 
 ## Main files
@@ -23,10 +27,12 @@ This repository contains the GitHub Pages site for Jose A. Mancera. The site is 
 
 - Edit `index.html` to update biography, experience, publications, or layout
 - Replace `jose-mancera-headshot.jpg` if you want to use a different portrait
-- Update the publication catalog when new ORCID items should be included
-- Update the GitHub heatmap manually when public repositories or categories change
-- Update the career timeline summaries in `trajectoryCatalog` and the shared graph layout in `trajectoryGraph` near the bottom of `index.html`
-- Update the grouped publication data in the `publicationCatalog` JavaScript object near the bottom of `index.html`
+- All data lives in JavaScript objects near the bottom of `index.html`:
+  - `publicationCatalog` (one entry per ORCID work, tagged with a `theme` from `publicationThemes`)
+  - `repoCatalog` (the recently active repository cards)
+  - `heatmap` (qualitative level 0–5 per theme and year, with a short evidence note)
+  - `trajectoryCatalog` and `trajectoryGraph` (career Sankey summaries and layout)
+- Update the stats row and footer review date in the HTML when the counts change
 
 ## Local preview
 
