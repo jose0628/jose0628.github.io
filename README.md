@@ -7,6 +7,7 @@ This repository contains the GitHub Pages site for Dr. José A. Mancera. The sit
 ## Site highlights
 
 - Editorial, warm-neutral design (Source Serif 4 + Inter) with automatic and manual light/dark mode
+- Language switcher (globe button) for English, Spanish, German, and French; remembers the choice and supports `?lang=es|de|fr` links
 - Hero section with portrait, summary, and profile links
 - Doctoral research feature for the completed PhD (thesis, framework pipeline, links)
 - Education, research interests, and an experience timeline
@@ -18,6 +19,7 @@ This repository contains the GitHub Pages site for Dr. José A. Mancera. The sit
 ## Main files
 
 - `index.html` - the full one-page site, including styles, content, SVG, and interaction logic
+- `i18n.js` - Spanish, German, and French translations (English is the source text in `index.html`)
 - `jose-mancera-headshot.jpg` - the portrait used in the hero/profile section
 - `2835968c-9b0c-43d7-b596-12b9c6bfeb06.png` - HSLU logo
 - `7c4df955-e75c-4cca-80de-0c9d93106421.png` - Swiss Paraplegic Centre logo
@@ -33,6 +35,7 @@ This repository contains the GitHub Pages site for Dr. José A. Mancera. The sit
   - `heatmap` (qualitative level 0–5 per theme and year, with a short evidence note)
   - `trajectoryCatalog` and `trajectoryGraph` (career Sankey summaries and layout)
 - Update the stats row and footer review date in the HTML when the counts change
+- Translations: elements marked `data-i18n="key"` in `index.html` are translated by the same key in `i18n.js`. When you change English text, update the matching key in each language; any missing key falls back to English
 
 ## Local preview
 
