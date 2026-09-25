@@ -443,13 +443,13 @@
     .button.primary {
       background: var(--btn-bg);
       color: var(--btn-ink);
-      border-color: var(--btn-bg);
+      border-color: transparent;
     }
 
     .button.primary:hover,
     .button.primary:focus-visible {
       background: var(--accent);
-      border-color: var(--accent);
+      border-color: transparent;
       color: #fff;
     }
 
@@ -457,6 +457,7 @@
 
     .portrait {
       position: relative;
+      margin: 0;
     }
 
     .portrait img {
@@ -686,7 +687,7 @@
       border-bottom: 1px solid var(--line);
     }
 
-    .edu-list time {
+    .edu-list .when {
       font-family: var(--mono);
       font-size: 0.8rem;
       color: var(--muted);
@@ -734,15 +735,6 @@
       color: var(--ink-2);
     }
 
-    .subhead {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin: 0 0 0.9rem;
-    }
 
     /* Trajectory */
     .trajectory {
@@ -884,7 +876,7 @@
       transition: background 150ms ease;
     }
 
-    .timeline time {
+    .timeline .when {
       font-family: var(--mono);
       font-size: 0.82rem;
       color: var(--muted);
@@ -903,7 +895,7 @@
       font-size: 0.95rem;
     }
 
-    .timeline .is-current time { color: var(--accent-ink); }
+    .timeline .is-current .when { color: var(--accent-ink); }
 
     /* Publications */
     .filter-row {
@@ -938,7 +930,7 @@
 
     .filter[aria-pressed="true"] {
       background: var(--btn-bg);
-      border-color: var(--btn-bg);
+      border-color: transparent;
       color: var(--btn-ink);
     }
 
@@ -1033,7 +1025,7 @@
     .pub-link:hover,
     .pub-link:focus-visible {
       background: var(--accent);
-      border-color: var(--accent);
+      border-color: transparent;
       color: #fff;
     }
 
@@ -1064,7 +1056,7 @@
       font-family: var(--mono);
       font-size: 0.86rem;
       font-weight: 500;
-      word-break: break-word;
+      overflow-wrap: anywhere;
     }
 
     .repo p {
@@ -1353,10 +1345,10 @@
             <span id="lang-current">EN</span>
           </button>
           <ul class="lang-menu" id="lang-menu" role="menu" hidden>
-            <li role="none"><button type="button" role="menuitemradio" data-lang="en" lang="en">English</button></li>
-            <li role="none"><button type="button" role="menuitemradio" data-lang="es" lang="es">Español</button></li>
-            <li role="none"><button type="button" role="menuitemradio" data-lang="de" lang="de">Deutsch</button></li>
-            <li role="none"><button type="button" role="menuitemradio" data-lang="fr" lang="fr">Français</button></li>
+            <li role="none"><button type="button" role="menuitemradio" aria-checked="true" data-lang="en" lang="en">English</button></li>
+            <li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es">Español</button></li>
+            <li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de">Deutsch</button></li>
+            <li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="fr" lang="fr">Français</button></li>
           </ul>
         </div>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" data-i18n-aria="ui.theme">
@@ -1383,7 +1375,7 @@
               <a class="button" href="https://www.linkedin.com/in/jose0628/" target="_blank" rel="noreferrer">LinkedIn</a>
             </div>
           </div>
-          <figure class="portrait" style="margin:0">
+          <figure class="portrait">
             <img src="jose-mancera-headshot.jpg" alt="Portrait of José A. Mancera" width="560" height="700">
             <figcaption><span data-i18n="hero.city">Zurich · Lucerne</span><span data-i18n="hero.country">Switzerland</span></figcaption>
           </figure>
@@ -1455,42 +1447,42 @@
           <div class="reveal">
             <ul class="edu-list">
               <li>
-                <time>PhD</time>
+                <span class="when">PhD</span>
                 <div>
                   <strong><span data-i18n="edu.phd">PhD in Computer Science and Artificial Intelligence</span> <span class="done" data-i18n="edu.done">Completed</span></strong>
                   <span data-i18n="uni.fribourg">University of Fribourg</span>
                 </div>
               </li>
               <li>
-                <time>M.A.</time>
+                <span class="when">M.A.</span>
                 <div>
                   <strong data-i18n="edu.ma">Information Management, magna cum laude</strong>
                   <span data-i18n="uni.fribourg">University of Fribourg</span>
                 </div>
               </li>
               <li>
-                <time>M.Sc.</time>
+                <span class="when">M.Sc.</span>
                 <div>
                   <strong data-i18n="edu.msc">Computer Science, magna cum laude</strong>
                   <span data-i18n="uni.bern">University of Bern</span>
                 </div>
               </li>
               <li>
-                <time data-i18n="edu.t.minor">Minor</time>
+                <span class="when" data-i18n="edu.t.minor">Minor</span>
                 <div>
                   <strong data-i18n="edu.minor">Space Technologies</strong>
                   <span>EPFL, Lausanne</span>
                 </div>
               </li>
               <li>
-                <time>B.Sc.</time>
+                <span class="when">B.Sc.</span>
                 <div>
                   <strong data-i18n="edu.bsc">Electronics and Communications</strong>
                   <span data-i18n="edu.tec">Monterrey Institute of Technology and Higher Education, Mexico</span>
                 </div>
               </li>
               <li>
-                <time data-i18n="edu.t.tracks">Tracks</time>
+                <span class="when" data-i18n="edu.t.tracks">Tracks</span>
                 <div>
                   <strong data-i18n="edu.add">Additional specialization</strong>
                   <span data-i18n="edu.addDesc">Mobile Devices and Information Technology at Jönköping University; Satellite Technology and Signal Processing at Copenhagen University College of Engineering</span>
@@ -1498,7 +1490,7 @@
               </li>
             </ul>
 
-            <div class="tags" aria-label="Research and teaching interests">
+            <div class="tags" role="group" aria-label="Research and teaching interests">
               <span data-i18n="tag1">Explainable AI</span>
               <span data-i18n="tag2">Fuzzy Systems</span>
               <span data-i18n="tag3">Privacy-Compliant AI</span>
@@ -1535,7 +1527,7 @@
             <button class="year-trigger is-active" type="button" data-year="2026">2026</button>
           </div>
 
-          <div class="sankey-frame" id="trajectory-sankey-frame" tabindex="0" aria-label="Scrollable career Sankey diagram">
+          <div class="sankey-frame" id="trajectory-sankey-frame" tabindex="0" role="region" aria-label="Scrollable career Sankey diagram">
             <svg id="trajectory-sankey" viewBox="0 0 1180 420" role="img" aria-labelledby="trajectory-sankey-title trajectory-sankey-desc"></svg>
           </div>
 
@@ -1545,7 +1537,7 @@
               <span id="trajectory-detail-stage">Current focus</span>
             </div>
             <div>
-              <h3 id="trajectory-detail-title"></h3>
+              <h3 id="trajectory-detail-title">Doctorate, privacy-compliant AI, health AI, and digital ethics</h3>
               <p id="trajectory-detail-summary"></p>
               <ul id="trajectory-detail-list"></ul>
             </div>
@@ -1563,37 +1555,37 @@
 
         <ol class="timeline reveal">
           <li class="is-current">
-            <time data-i18n="exp.t1">2019 – present</time>
+            <span class="when" data-i18n="exp.t1">2019 – present</span>
             <h3 data-i18n="exp1.h">Applied Data Science Researcher</h3>
             <p data-i18n="exp1.p">Beekeeper AG, Zurich. Applied AI, data-driven product research, and privacy-aware user characterization strategies.</p>
           </li>
           <li class="is-current">
-            <time data-i18n="exp.t2">2022 – present</time>
+            <span class="when" data-i18n="exp.t2">2022 – present</span>
             <h3 data-i18n="exp2.h">Lecturer</h3>
             <p data-i18n="exp2.p">Lucerne University of Applied Sciences and Arts. Teaching AI, search and optimization, data systems, and visualization.</p>
           </li>
           <li>
-            <time data-i18n="exp.t3">Completed</time>
+            <span class="when" data-i18n="exp.t3">Completed</span>
             <h3 data-i18n="exp3.h">Doctoral researcher</h3>
             <p data-i18n="exp3.p">University of Fribourg. PhD in Computer Science and AI on privacy-compliant fuzzy user characterization.</p>
           </li>
           <li>
-            <time>2016 – 2018</time>
+            <span class="when">2016 – 2018</span>
             <h3 data-i18n="exp4.h">Machine learning transition</h3>
             <p data-i18n="exp4.p">Data Scientist at Schindler and Senior Big Data Machine Learning Scientist with the Information Systems Research Group at the University of Fribourg.</p>
           </li>
           <li>
-            <time>2017 – 2018</time>
+            <span class="when">2017 – 2018</span>
             <h3 data-i18n="exp5.h">Fintech and software delivery</h3>
             <p data-i18n="exp5.p">Software Engineer at CreditGate24, adding practical product and delivery experience.</p>
           </li>
           <li>
-            <time>2013 – 2016</time>
+            <span class="when">2013 – 2016</span>
             <h3 data-i18n="exp6.h">Space and software systems</h3>
             <p data-i18n="exp6.p">Research Assistant at the Swiss Space Center at EPFL, Software Engineer at ELCA, and Software / Space System Engineer at Swiss Space Systems.</p>
           </li>
           <li>
-            <time>2006 – 2013</time>
+            <span class="when">2006 – 2013</span>
             <h3 data-i18n="exp7.h">Telecom engineering</h3>
             <p data-i18n="exp7.p">Telecom Engineer Solutions at Huawei in Mexico City, then Senior Telecommunications Engineer at Nortel Networks in Montreal.</p>
           </li>
@@ -1657,24 +1649,24 @@
           </article>
 
           <div class="logo-list">
-            <article class="card logo-card reveal">
+            <div class="card logo-card reveal">
               <div class="logo-frame">
                 <img src="2835968c-9b0c-43d7-b596-12b9c6bfeb06.png" alt="Lucerne University of Applied Sciences and Arts logo">
               </div>
               <p data-i18n="eco.hslu">Teaching, research, and public faculty profile at the Lucerne School of Business.</p>
-            </article>
-            <article class="card logo-card reveal">
+            </div>
+            <div class="card logo-card reveal">
               <div class="logo-frame">
                 <img src="7c4df955-e75c-4cca-80de-0c9d93106421.png" alt="Swiss Paraplegic Centre logo">
               </div>
               <p data-i18n="eco.spc">Health research partner for rehabilitation and explainable recommender systems.</p>
-            </article>
-            <article class="card logo-card reveal">
+            </div>
+            <div class="card logo-card reveal">
               <div class="logo-frame">
                 <img src="snsf_logo.png" alt="Swiss National Science Foundation logo">
               </div>
               <p data-i18n="eco.snsf">National funding context for high-impact applied AI research in Switzerland.</p>
-            </article>
+            </div>
           </div>
         </div>
       </section>
@@ -2256,7 +2248,7 @@
       });
 
       // Code
-      const langClass = (lang) => lang === "Markdown" ? "md" : lang === "Jupyter Notebook" ? "nb" : "";
+      const langClass = (language) => language === "Markdown" ? "md" : language === "Jupyter Notebook" ? "nb" : "";
 
       const formatMonth = (value) => {
         const [y, m] = value.split("-").map(Number);
@@ -2282,7 +2274,7 @@
             const text = !note ? t("ui.noSignal", "No public signal")
               : note === "Low public signal" ? t("ui.lowSignal", note) : note;
             const title = `${heatmap.years[i]}: ${text}`;
-            return `<td><span class="heat-cell lvl-${lvl}" title="${escapeHtml(title)}" aria-label="${escapeHtml(title)}"></span></td>`;
+            return `<td><span class="heat-cell lvl-${lvl}" role="img" title="${escapeHtml(title)}" aria-label="${escapeHtml(title)}"></span></td>`;
           }).join("")}</tr>`).join("")}
         </tbody>`;
       };
