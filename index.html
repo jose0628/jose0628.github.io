@@ -163,7 +163,7 @@
       margin: 0;
       background: var(--bg);
       color: var(--ink);
-      font-family: var(--sans);
+      font-family: var(--sans), sans-serif;
       font-size: 16px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -216,7 +216,7 @@
       border-radius: 8px;
       background: var(--accent);
       color: #fff;
-      font-family: var(--serif);
+      font-family: var(--serif), serif;
       font-size: 0.95rem;
       font-weight: 600;
     }
@@ -321,9 +321,11 @@
     .theme-toggle svg { width: 1rem; height: 1rem; }
     .theme-toggle .icon-sun { display: none; }
     :root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+    /*noinspection CssUnusedSymbol*/
     :root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) .theme-toggle .icon-sun { display: block; }
+      /*noinspection CssUnusedSymbol*/
       :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
     }
 
@@ -339,7 +341,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
-      font-family: var(--mono);
+      font-family: var(--mono), monospace;
       font-size: 0.75rem;
       font-weight: 500;
       letter-spacing: 0.04em;
@@ -386,7 +388,7 @@
 
     .hero h1 {
       margin-top: 1.6rem;
-      font-family: var(--serif);
+      font-family: var(--serif), serif;
       font-weight: 400;
       font-size: clamp(2.6rem, 6.2vw, 4.6rem);
       line-height: 1.04;
@@ -401,7 +403,7 @@
     .hero-lead {
       margin: 1.5rem 0 0;
       max-width: 40ch;
-      font-family: var(--serif);
+      font-family: var(--serif), serif;
       font-size: clamp(1.2rem, 2vw, 1.5rem);
       line-height: 1.4;
       color: var(--ink-2);
@@ -471,7 +473,7 @@
 
     .portrait figcaption {
       margin-top: 0.75rem;
-      font-family: var(--mono);
+      font-family: var(--mono), monospace;
       font-size: 0.72rem;
       letter-spacing: 0.03em;
       color: var(--muted);
@@ -497,7 +499,7 @@
 
     .stat strong {
       display: block;
-      font-family: var(--serif);
+      font-family: var(--serif), serif;
       font-size: clamp(1.9rem, 3.4vw, 2.5rem);
       font-weight: 400;
       letter-spacing: -0.02em;
@@ -526,7 +528,7 @@
     }
 
     .section-title {
-      font-family: var(--serif);
+      font-family: var(--serif), serif;
       font-weight: 400;
       font-size: clamp(1.9rem, 3.6vw, 2.7rem);
       letter-spacing: -0.025em;
@@ -569,7 +571,7 @@
       border-radius: 6px;
       background: var(--accent-soft);
       color: var(--accent-ink);
-      font-family: var(--mono);
+      font-family: var(--mono), monospace;
       font-size: 0.72rem;
       letter-spacing: 0.04em;
       text-transform: uppercase;
@@ -577,7 +579,7 @@
 
     .thesis h3 {
       margin-top: 1.1rem;
-      font-family: var(--serif);
+      font-family: var(--serif), serif;
       font-weight: 400;
       font-size: clamp(1.5rem, 2.8vw, 2.05rem);
       line-height: 1.2;
@@ -603,7 +605,7 @@
     }
 
     .thesis-side h4 {
-      font-family: var(--mono);
+      font-family: var(--mono), monospace;
       font-size: 0.72rem;
       font-weight: 500;
       letter-spacing: 0.04em;
@@ -639,7 +641,7 @@
       border-radius: 50%;
       border: 1px solid var(--line-strong);
       background: var(--surface);
-      font-family: var(--mono);
+      font-family: var(--mono), monospace;
       font-size: 0.7rem;
       color: var(--accent-ink);
       position: relative;
@@ -649,7 +651,8 @@
     .pipeline li:not(:last-child)::after {
       content: "";
       position: absolute;
-      left: calc(1rem - 0.5px);
+      left: 1rem;
+      transform: translateX(-50%);
       top: 2rem;
       bottom: 0;
       width: 1px;
@@ -688,7 +691,7 @@
     }
 
     .edu-list .when {
-      font-family: var(--mono);
+      font-family: var(--mono), monospace;
       font-size: 0.8rem;
       color: var(--muted);
       padding-top: 0.2rem;
@@ -712,7 +715,7 @@
       border-radius: 5px;
       background: var(--accent-soft);
       color: var(--accent-ink);
-      font-family: var(--mono);
+      font-family: var(--mono), monospace;
       font-size: 0.68rem;
       letter-spacing: 0.03em;
       text-transform: uppercase;
@@ -793,18 +796,27 @@
     }
 
     .sk-bg { fill: var(--sankey-bg); }
+    /*noinspection CssUnusedSymbol*/
     .sk-guide { stroke: var(--line); stroke-width: 1; stroke-dasharray: 4 8; }
+    /*noinspection CssUnusedSymbol*/
     .sk-guide.is-active { stroke: var(--sankey-band-line); }
+    /*noinspection CssUnusedSymbol*/
     .sk-year { fill: var(--muted); font: 500 14px var(--mono); }
+    /*noinspection CssUnusedSymbol*/
     .sk-year.is-active { fill: var(--accent-ink); }
     .sk-band { fill: var(--sankey-band); stroke: var(--sankey-band-line); stroke-width: 1; }
     .sk-link { fill: none; stroke-linecap: round; transition: opacity 200ms ease; }
     .sk-label { fill: var(--ink); font: 600 14px var(--sans); }
     .sk-sub { fill: var(--muted); font: 400 11px var(--sans); }
+    /*noinspection CssUnusedSymbol*/
     .c-clay { fill: var(--c-clay); stroke: var(--c-clay); }
+    /*noinspection CssUnusedSymbol*/
     .c-sky { fill: var(--c-sky); stroke: var(--c-sky); }
+    /*noinspection CssUnusedSymbol*/
     .c-olive { fill: var(--c-olive); stroke: var(--c-olive); }
+    /*noinspection CssUnusedSymbol*/
     .c-kraft { fill: var(--c-kraft); stroke: var(--c-kraft); }
+    /*noinspection CssUnusedSymbol*/
     .sk-link.c-clay, .sk-link.c-sky, .sk-link.c-olive, .sk-link.c-kraft { fill: none; }
     .sk-node rect { stroke: none; }
 
@@ -822,14 +834,14 @@
     }
 
     .trajectory-meta .big-year {
-      font-family: var(--serif);
+      font-family: var(--serif), serif;
       font-size: 2.4rem;
       line-height: 1;
       letter-spacing: -0.02em;
     }
 
     .trajectory-meta span:last-child {
-      font-family: var(--mono);
+      font-family: var(--mono), monospace;
       font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.04em;
@@ -837,7 +849,7 @@
     }
 
     .trajectory-summary h3 {
-      font-family: var(--serif);
+      font-family: var(--serif), serif;
       font-weight: 400;
       font-size: 1.35rem;
     }
@@ -877,14 +889,14 @@
     }
 
     .timeline .when {
-      font-family: var(--mono);
+      font-family: var(--mono), monospace;
       font-size: 0.82rem;
       color: var(--muted);
       padding-top: 0.2rem;
     }
 
     .timeline h3 {
-      font-family: var(--serif);
+      font-family: var(--serif), serif;
       font-weight: 400;
       font-size: 1.25rem;
     }
@@ -923,7 +935,7 @@
     .filter:hover { background: var(--bg-alt); }
 
     .filter .n {
-      font-family: var(--mono);
+      font-family: var(--mono), monospace;
       font-size: 0.72rem;
       color: var(--muted);
     }
@@ -952,14 +964,14 @@
     }
 
     .pub-year {
-      font-family: var(--mono);
+      font-family: var(--mono), monospace;
       font-size: 0.85rem;
       color: var(--muted);
       padding-top: 0.25rem;
     }
 
     .pub h3 {
-      font-family: var(--serif);
+      font-family: var(--serif), serif;
       font-weight: 400;
       font-size: 1.15rem;
       line-height: 1.35;
@@ -969,7 +981,7 @@
     .pub h3 a {
       text-decoration: none;
       background-image: linear-gradient(var(--accent), var(--accent));
-      background-size: 0% 1px;
+      background-size: 0 1px;
       background-position: 0 100%;
       background-repeat: no-repeat;
       transition: background-size 250ms ease;
@@ -996,11 +1008,12 @@
       border-radius: 5px;
       background: var(--bg-alt);
       color: var(--muted);
-      font-family: var(--mono);
+      font-family: var(--mono), monospace;
       font-size: 0.7rem;
       letter-spacing: 0.02em;
     }
 
+    /*noinspection CssUnusedSymbol*/
     .pub-tags .new {
       background: var(--accent-soft);
       color: var(--accent-ink);
@@ -1016,7 +1029,7 @@
       border-radius: 8px;
       color: var(--ink-2);
       text-decoration: none;
-      font-family: var(--mono);
+      font-family: var(--mono), monospace;
       font-size: 0.75rem;
       white-space: nowrap;
       transition: background 150ms ease, color 150ms ease;
@@ -1053,7 +1066,7 @@
     }
 
     .repo-name {
-      font-family: var(--mono);
+      font-family: var(--mono), monospace;
       font-size: 0.86rem;
       font-weight: 500;
       overflow-wrap: anywhere;
@@ -1072,7 +1085,7 @@
       gap: 0.9rem;
       font-size: 0.78rem;
       color: var(--muted);
-      font-family: var(--mono);
+      font-family: var(--mono), monospace;
     }
 
     .repo-meta .lang::before {
@@ -1086,7 +1099,9 @@
       vertical-align: 0.02em;
     }
 
+    /*noinspection CssUnusedSymbol*/
     .repo-meta .lang.md::before { background: var(--c-olive); }
+    /*noinspection CssUnusedSymbol*/
     .repo-meta .lang.nb::before { background: var(--c-kraft); }
 
     .heat-wrap {
@@ -1109,7 +1124,7 @@
     }
 
     .heat-table th {
-      font-family: var(--mono);
+      font-family: var(--mono), monospace;
       font-weight: 500;
       font-size: 0.72rem;
       color: var(--muted);
@@ -1159,7 +1174,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.3rem;
-      font-family: var(--mono);
+      font-family: var(--mono), monospace;
       font-size: 0.72rem;
     }
 
@@ -1190,7 +1205,7 @@
     .spotlight .kicker { color: color-mix(in srgb, var(--btn-ink) 60%, transparent); }
 
     .spotlight h3 {
-      font-family: var(--serif);
+      font-family: var(--serif), serif;
       font-weight: 400;
       font-size: clamp(1.8rem, 3.5vw, 2.4rem);
     }
@@ -1248,7 +1263,7 @@
     }
 
     .footer-name {
-      font-family: var(--serif);
+      font-family: var(--serif), serif;
       font-size: 1.5rem;
     }
 
@@ -1274,12 +1289,14 @@
     .footer-links a:hover { color: var(--accent-ink); }
 
     /* Reveal */
+    /*noinspection CssUnusedSymbol*/
     .js .reveal {
       opacity: 0;
       transform: translateY(14px);
       transition: opacity 600ms ease, transform 600ms ease;
     }
 
+    /*noinspection CssUnusedSymbol*/
     .js .reveal.is-visible {
       opacity: 1;
       transform: none;
@@ -1287,6 +1304,7 @@
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
+      /*noinspection CssUnusedSymbol*/
       .js .reveal { opacity: 1; transform: none; transition: none; }
       .sankey-frame { scroll-behavior: auto; }
     }
@@ -1376,7 +1394,7 @@
             </div>
           </div>
           <figure class="portrait">
-            <img src="jose-mancera-headshot.jpg" alt="Portrait of José A. Mancera" width="560" height="700">
+            <img src="jose-mancera-headshot.jpg" alt="Portrait of José A. Mancera" width="337" height="449">
             <figcaption><span data-i18n="hero.city">Zurich · Lucerne</span><span data-i18n="hero.country">Switzerland</span></figcaption>
           </figure>
         </div>
