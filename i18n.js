@@ -29,7 +29,7 @@ window.I18N = {
     "hero.country": "Suiza",
 
     "stat1": "Informática e IA, Universidad de Friburgo",
-    "stat2": "Trabajos en ORCID, 2 de ellos nuevos en 2026",
+    "stat2": "Trabajos en ORCID, 3 de ellos nuevos en 2026",
     "stat3": "Repositorios públicos y 31 gists en GitHub",
     "stat4.value": "20 años",
     "stat4": "De la ingeniería de telecomunicaciones a la investigación en IA",
@@ -106,7 +106,7 @@ window.I18N = {
     "exp7.p": "Ingeniero de soluciones de telecomunicaciones en Huawei en Ciudad de México y, después, ingeniero sénior de telecomunicaciones en Nortel Networks en Montreal.",
 
     "pub.title": "Artículos y publicaciones",
-    "pub.intro": "Los 13 trabajos del registro público de ORCID, del más reciente al más antiguo. Filtra por tema de investigación.",
+    "pub.intro": "Los 14 trabajos del registro público de ORCID, del más reciente al más antiguo. Filtra por tema de investigación.",
     "theme.health": "IA para la salud y sistemas difusos",
     "theme.privacy": "Privacidad e IA empresarial",
     "theme.recs": "Sistemas de recomendación",
@@ -139,12 +139,12 @@ window.I18N = {
     "eco.title": "Proyectos y actividades académicas",
     "eco.kicker": "Proyecto FNS · HSLU",
     "eco.p1": "Optimización de los servicios de rehabilitación mediante sistemas de recomendación explicables: un puente entre la IA aplicada, la salud y el apoyo responsable a la toma de decisiones. Su artículo en FUZZ-IEEE 2026 estratifica, desde el ingreso, el resultado funcional y la duración de la estancia con modelos difusos interpretables.",
-    "eco.p2": "Otros proyectos públicos incluyen el Swiss Digital Ethics Compass y trabajos sobre la predicción causal del tráfico: de la salud y la ética a la movilidad y la tecnología cívica.",
+    "eco.p2": "Otros proyectos públicos incluyen el Swiss Digital Ethics Compass y trabajos sobre seguridad vial y predicción causal del tráfico: de la salud y la ética a la movilidad y la tecnología cívica.",
     "eco.hslu": "Docencia, investigación y perfil docente público en la Escuela de Negocios de Lucerna.",
     "eco.spc": "Socio de investigación en salud para la rehabilitación y los sistemas de recomendación explicables.",
     "eco.snsf": "Marco de financiación nacional para investigación aplicada en IA de alto impacto en Suiza.",
 
-    "footer.note": "Perfil profesional elaborado a partir de fuentes públicas. La biografía y la formación siguen el perfil público de la HSLU; las publicaciones reflejan el registro público de ORCID y las cifras de GitHub, los repositorios y gists públicos, ambos revisados el 25 de septiembre de 2026.",
+    "footer.note": "Perfil profesional elaborado a partir de fuentes públicas. La biografía y la formación siguen el perfil público de la HSLU; las publicaciones reflejan el registro público de ORCID y las cifras de GitHub, los repositorios y gists públicos, ambos revisados el 30 de septiembre de 2026.",
     "footer.hslu": "Perfil HSLU",
 
     "traj.2006": {
@@ -204,7 +204,7 @@ window.I18N = {
       points: [
         "Doctorado en Informática e Inteligencia Artificial por la Universidad de Friburgo",
         "Tesis: Privacy-Compliant User Characterization in Enterprise Social Networks",
-        "Publicaciones de 2026: artículo en FUZZ-IEEE sobre resultados de rehabilitación y artículo del marco en SSRN"
+        "Publicaciones de 2026: artículo en FUZZ-IEEE sobre resultados de rehabilitación, artículo en ICEDEG sobre seguridad vial en Suiza y artículo del marco en SSRN"
       ]
     },
     "nodes": {
@@ -258,7 +258,7 @@ window.I18N = {
     "hero.country": "Schweiz",
 
     "stat1": "Informatik & KI, Universität Freiburg",
-    "stat2": "Werke auf ORCID, davon 2 neu im Jahr 2026",
+    "stat2": "Werke auf ORCID, davon 3 neu im Jahr 2026",
     "stat3": "Öffentliche Repositories und 31 Gists auf GitHub",
     "stat4.value": "20 Jahre",
     "stat4": "Von der Telekommunikationstechnik zur KI-Forschung",
@@ -335,7 +335,7 @@ window.I18N = {
     "exp7.p": "Telecom Solutions Engineer bei Huawei in Mexiko-Stadt, danach Senior Telecommunications Engineer bei Nortel Networks in Montreal.",
 
     "pub.title": "Artikel & Publikationen",
-    "pub.intro": "Alle 13 Werke aus dem öffentlichen ORCID-Profil, neueste zuerst. Nach Forschungsthema filtern.",
+    "pub.intro": "Alle 14 Werke aus dem öffentlichen ORCID-Profil, neueste zuerst. Nach Forschungsthema filtern.",
     "theme.health": "Gesundheits-KI & Fuzzy-Systeme",
     "theme.privacy": "Datenschutz & Unternehmens-KI",
     "theme.recs": "Empfehlungssysteme",
@@ -368,12 +368,12 @@ window.I18N = {
     "eco.title": "Akademische Projekte & Aktivitäten",
     "eco.kicker": "SNF-Projekt · HSLU",
     "eco.p1": "Optimierung von Rehabilitationsleistungen durch erklärbare Empfehlungssysteme – eine Brücke zwischen angewandter KI, Gesundheitswesen und verantwortungsvoller Entscheidungsunterstützung. Das FUZZ-IEEE-Paper 2026 stratifiziert funktionelles Outcome und Aufenthaltsdauer bereits bei Eintritt mit interpretierbaren Fuzzy-Modellen.",
-    "eco.p2": "Weitere öffentliche Projekte sind der Swiss Digital Ethics Compass und Arbeiten zu kausalen Verkehrsprognosen – vom Gesundheitswesen und der Ethik bis zu Mobilität und Civic Tech.",
+    "eco.p2": "Weitere öffentliche Projekte sind der Swiss Digital Ethics Compass und Arbeiten zu Verkehrssicherheit und kausalen Verkehrsprognosen – vom Gesundheitswesen und der Ethik bis zu Mobilität und Civic Tech.",
     "eco.hslu": "Lehre, Forschung und öffentliches Dozierendenprofil am Departement Wirtschaft der Hochschule Luzern.",
     "eco.spc": "Forschungspartner im Gesundheitsbereich für Rehabilitation und erklärbare Empfehlungssysteme.",
     "eco.snsf": "Nationaler Förderrahmen für wirkungsvolle angewandte KI-Forschung in der Schweiz.",
 
-    "footer.note": "Ein kuratiertes Berufsprofil aus öffentlichen Quellen. Biografie und Ausbildung folgen dem öffentlichen HSLU-Profil; die Publikationen entsprechen dem öffentlichen ORCID-Profil und die GitHub-Zahlen den öffentlichen Repositories und Gists, beides Stand 25. September 2026.",
+    "footer.note": "Ein kuratiertes Berufsprofil aus öffentlichen Quellen. Biografie und Ausbildung folgen dem öffentlichen HSLU-Profil; die Publikationen entsprechen dem öffentlichen ORCID-Profil und die GitHub-Zahlen den öffentlichen Repositories und Gists, beides Stand 30. September 2026.",
     "footer.hslu": "HSLU-Profil",
 
     "traj.2006": {
@@ -433,7 +433,7 @@ window.I18N = {
       points: [
         "PhD in Informatik und Künstlicher Intelligenz der Universität Freiburg",
         "Dissertation: Privacy-Compliant User Characterization in Enterprise Social Networks",
-        "Publikationen 2026: FUZZ-IEEE-Paper zu Rehabilitationsergebnissen und Framework-Paper auf SSRN"
+        "Publikationen 2026: FUZZ-IEEE-Paper zu Rehabilitationsergebnissen, ICEDEG-Paper zur Verkehrssicherheit in der Schweiz und Framework-Paper auf SSRN"
       ]
     },
     "nodes": {
@@ -487,7 +487,7 @@ window.I18N = {
     "hero.country": "Suisse",
 
     "stat1": "Informatique et IA, Université de Fribourg",
-    "stat2": "Travaux sur ORCID, dont 2 nouveaux en 2026",
+    "stat2": "Travaux sur ORCID, dont 3 nouveaux en 2026",
     "stat3": "Dépôts publics et 31 gists sur GitHub",
     "stat4.value": "20 ans",
     "stat4": "De l’ingénierie des télécoms à la recherche en IA",
@@ -564,7 +564,7 @@ window.I18N = {
     "exp7.p": "Ingénieur solutions télécoms chez Huawei à Mexico, puis ingénieur principal en télécommunications chez Nortel Networks à Montréal.",
 
     "pub.title": "Articles et publications",
-    "pub.intro": "Les 13 travaux du profil ORCID public, du plus récent au plus ancien. Filtrez par thème de recherche.",
+    "pub.intro": "Les 14 travaux du profil ORCID public, du plus récent au plus ancien. Filtrez par thème de recherche.",
     "theme.health": "IA en santé et systèmes flous",
     "theme.privacy": "Vie privée et IA d’entreprise",
     "theme.recs": "Systèmes de recommandation",
@@ -597,12 +597,12 @@ window.I18N = {
     "eco.title": "Projets et activités académiques",
     "eco.kicker": "Projet FNS · HSLU",
     "eco.p1": "Optimiser les services de réadaptation grâce à des systèmes de recommandation explicables, à la croisée de l’IA appliquée, de la santé et d’une aide à la décision responsable. Son article FUZZ-IEEE 2026 stratifie, dès l’admission, le résultat fonctionnel et la durée de séjour à l’aide de modèles flous interprétables.",
-    "eco.p2": "Parmi les autres projets publics figurent le Swiss Digital Ethics Compass et des travaux sur la prédiction causale du trafic : de la santé et de l’éthique à la mobilité et aux technologies civiques.",
+    "eco.p2": "Parmi les autres projets publics figurent le Swiss Digital Ethics Compass et des travaux sur la sécurité routière et la prédiction causale du trafic : de la santé et de l’éthique à la mobilité et aux technologies civiques.",
     "eco.hslu": "Enseignement, recherche et profil public d’enseignant à la Haute école de gestion de Lucerne.",
     "eco.spc": "Partenaire de recherche en santé pour la réadaptation et les systèmes de recommandation explicables.",
     "eco.snsf": "Cadre de financement national pour une recherche appliquée en IA à fort impact en Suisse.",
 
-    "footer.note": "Profil professionnel établi à partir de sources publiques. La biographie et la formation suivent le profil public de la HSLU ; les publications reflètent le profil ORCID public et les chiffres GitHub les dépôts et gists publics, consultés le 25 septembre 2026.",
+    "footer.note": "Profil professionnel établi à partir de sources publiques. La biographie et la formation suivent le profil public de la HSLU ; les publications reflètent le profil ORCID public et les chiffres GitHub les dépôts et gists publics, consultés le 30 septembre 2026.",
     "footer.hslu": "Profil HSLU",
 
     "traj.2006": {
@@ -662,7 +662,7 @@ window.I18N = {
       points: [
         "Doctorat en informatique et intelligence artificielle de l’Université de Fribourg",
         "Thèse : Privacy-Compliant User Characterization in Enterprise Social Networks",
-        "Publications 2026 : article FUZZ-IEEE sur les résultats de réadaptation et article du cadre sur SSRN"
+        "Publications 2026 : article FUZZ-IEEE sur les résultats de réadaptation, article ICEDEG sur la sécurité routière en Suisse et article du cadre sur SSRN"
       ]
     },
     "nodes": {
